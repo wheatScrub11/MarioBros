@@ -24,12 +24,13 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.SuspendLayout()
         '
         'Button1
         '
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button1.Location = New System.Drawing.Point(114, 149)
+        Me.Button1.Location = New System.Drawing.Point(216, 99)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(294, 193)
         Me.Button1.TabIndex = 0
@@ -38,18 +39,27 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(721, 176)
+        Me.Button2.Location = New System.Drawing.Point(562, 308)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Button2"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'CheckedListBox1
+        '
+        Me.CheckedListBox1.FormattingEnabled = True
+        Me.CheckedListBox1.Location = New System.Drawing.Point(563, 142)
+        Me.CheckedListBox1.Name = "CheckedListBox1"
+        Me.CheckedListBox1.Size = New System.Drawing.Size(120, 94)
+        Me.CheckedListBox1.TabIndex = 2
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(924, 491)
+        Me.Controls.Add(Me.CheckedListBox1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Form1"
@@ -60,4 +70,5 @@ Partial Class Form1
 
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents CheckedListBox1 As CheckedListBox
 End Class
