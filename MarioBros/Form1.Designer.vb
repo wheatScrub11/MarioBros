@@ -30,9 +30,9 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button1.Location = New System.Drawing.Point(216, 99)
+        Me.Button1.Location = New System.Drawing.Point(123, 199)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(294, 193)
+        Me.Button1.Size = New System.Drawing.Size(292, 52)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
