@@ -1,6 +1,7 @@
 ﻿Public Class Form1
 
     Dim yAxeGroundPosition As Int64
+    Dim moveVal As Int64 = 5
     Public Function applyGravity() As Boolean
         If (pb1.Location.Y + 100) >= yAxeGroundPosition Then ''when reaches the ground
             System.Console.WriteLine("XDD")
@@ -14,6 +15,8 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         yAxeGroundPosition = 400
         timer_gravity.Start()
+        'System.Console.WriteLine(pb2.Location.X)
+        System.Console.WriteLine(pb1.Location.X + pb1.Width)
     End Sub
 
 
@@ -82,21 +85,40 @@
 
 
     Private Sub timer_moveRight_Tick(sender As Object, e As EventArgs) Handles timer_moveRight.Tick
-        System.Console.WriteLine("---------------")
-        System.Console.WriteLine(pb1.Location.X + 100)
-        System.Console.WriteLine(pb2.Left)
-        System.Console.WriteLine("---------------")
 
-        If pb1.Location.X + 100 = pb2.Left Then
+        System.Console.WriteLine("PASO")
+        If timer_moveRight.Enabled = True And timer_moveLeft.Enabled = True Then
             pb1.Location = New Point(pb1.Location.X, pb1.Location.Y)
         Else
-            System.Console.WriteLine("PASO")
-            If timer_moveRight.Enabled = True And timer_moveLeft.Enabled = True Then
-                pb1.Location = New Point(pb1.Location.X, pb1.Location.Y)
-            Else
-                pb1.Location = New Point(pb1.Location.X + 1, pb1.Location.Y)
-            End If
+
+            For Each ctrl As Control In Me.Controls
+                If TypeOf ctrl Is PictureBox AndAlso ctrl IsNot pb1 AndAlso ctrl IsNot PictureBox1 Then
+                    Dim picBox As PictureBox = DirectCast(ctrl, PictureBox)
+
+                    If pb1.Location.X + pb1.Width + moveVal >= picBox.Location.X AndAlso pb1.Location.X + pb1.Width + moveVal <= picBox.Location.X + picBox.Width Then
+                        System.Console.WriteLine("JAJJAJJA")
+                        System.Console.WriteLine(picBox.Location.X)
+                        System.Console.WriteLine(pb1.Location.X + pb1.Width)
+                        moveVal = picBox.Location.X - (pb1.Location.X + pb1.Width)
+                        System.Console.WriteLine(moveVal)
+                        pb1.Location = New Point(pb1.Location.X + moveVal, pb1.Location.Y)
+
+
+                        moveVal = 5
+
+                    ElseIf pb1.Location.X + pb1.Width = picBox.Location.X Then
+
+                    Else
+                        pb1.Location = New Point(pb1.Location.X + moveVal, pb1.Location.Y)
+
+                    End If
+                End If
+            Next
+
+
+            'pb1.Location = New Point(pb1.Location.X + 15, pb1.Location.Y)
         End If
+
 
 
     End Sub
@@ -105,7 +127,7 @@
         If timer_moveRight.Enabled = True And timer_moveLeft.Enabled = True Then
             pb1.Location = New Point(pb1.Location.X, pb1.Location.Y)
         Else
-            pb1.Location = New Point(pb1.Location.X - 15, pb1.Location.Y)
+            pb1.Location = New Point(pb1.Location.X - 5, pb1.Location.Y)
         End If
 
 
