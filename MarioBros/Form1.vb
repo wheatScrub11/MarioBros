@@ -1,82 +1,109 @@
 Public Class Form1
+  Dim y As Integer = 300
+  Dim velocityY As Double = 0
+  Dim gravity As Double = 9.8
+  Dim jumpSpeed As Double = -500 ' Timer tick in seconds
+  Dim isJumping As Boolean = False
 
-    Dim yAxeGroundPosition As Int64
+  Private Sub timer_jump_Tick(sender As Object, e As EventArgs) Handles timer_jump.Tick
+    If isJumping Then
+      velocityY += gravity
+      pb1.Location = New Point(pb1.Location.X, pb1.Location.Y + velocityY * 0.02)
+      col.Location = New Point(col.Location.X, col.Location.Y + velocityY * 0.02)
+      col2.Location = New Point(col2.Location.X, col2.Location.Y + velocityY * 0.02)
+
+      If pb1.Location.Y >= 300 Then
+        y = 400
+        velocityY = 0
+        isJumping = False
+      End If
+    End If
+
+
+  End Sub
+
+
+  Dim yAxeGroundPosition As Int64
   Dim moveVal As Int64 = 5
   Dim moveRight As Boolean = True
   Dim moveLeft As Boolean = True
   Public Function applyGravity() As Boolean
-        If (pb1.Location.Y + 100) >= yAxeGroundPosition Then ''when reaches the ground
-            System.Console.WriteLine("XDD")
-            timer_gravity.Stop()
-        Else
-            pb1.Location = New Point(pb1.Location.X, pb1.Location.Y + 10)
-        End If
+    If (pb1.Location.Y + 100) >= yAxeGroundPosition Then ''when reaches the ground
+      System.Console.WriteLine("XDD")
+      timer_gravity.Stop()
+    Else
+      pb1.Location = New Point(pb1.Location.X, pb1.Location.Y + 10)
+    End If
 
-        Return False
-    End Function
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        yAxeGroundPosition = 400
+    Return False
+  End Function
+  Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    yAxeGroundPosition = 400
     timer_gravity.Start()
+    timer_jump.Start()
   End Sub
 
 
-    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+  Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
 
     Dim bHandled As Boolean = False
-        System.Console.WriteLine(e.KeyData)
-        Select Case e.KeyCode
-            Case Keys.Right
-                enableXAxesCubeMovement("right")
-                e.Handled = True
-            Case Keys.Left
-                enableXAxesCubeMovement("left")
-                e.Handled = True
-            Case Keys.Up
-
-            Case Keys.Down
-
-
-
-        End Select
-    End Sub
-
-    Private Sub Form1_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
-        ' Sets Handled to true to prevent other controls from
-        ' receiving the key if an arrow key was pressed
-        Dim bHandled As Boolean = False
-        If e.KeyCode = Keys.Right Then
-
-            cleanXAxesCubeMovement("right")
-        ElseIf e.KeyCode = Keys.Left Then
-
-            cleanXAxesCubeMovement("left")
-
-        ElseIf e.KeyCode = Keys.Up Then
-
-
-
+    System.Console.WriteLine(e.KeyData)
+    Select Case e.KeyCode
+      Case Keys.Right
+        enableXAxesCubeMovement("right")
+        e.Handled = True
+      Case Keys.Left
+        enableXAxesCubeMovement("left")
+        e.Handled = True
+      Case Keys.Up
+        If Not isJumping Then
+          isJumping = True
+          velocityY = jumpSpeed
         End If
+      Case Keys.Down
 
-    End Sub
 
-    Public Function enableXAxesCubeMovement(direction As String) As Boolean
 
-        If direction = "right" Then
-            timer_moveRight.Start()
-        ElseIf direction = "left" Then
-            timer_moveLeft.Start()
-        End If
-        Return False
-    End Function
+    End Select
+  End Sub
 
-    Public Function cleanXAxesCubeMovement(direction As String) As Boolean
-        If direction = "right" Then
-            timer_moveRight.Stop()
-        ElseIf direction = "left" Then
-            timer_moveLeft.Stop()
-        End If
-        Return False
-    End Function
+  Private Sub Form1_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
+    ' Sets Handled to true to prevent other controls from
+    ' receiving the key if an arrow key was pressed
+    Dim bHandled As Boolean = False
+    If e.KeyCode = Keys.Right Then
+
+      cleanXAxesCubeMovement("right")
+    ElseIf e.KeyCode = Keys.Left Then
+
+      cleanXAxesCubeMovement("left")
+
+    ElseIf e.KeyCode = Keys.Up Then
+
+
+
+    End If
+
+  End Sub
+
+  Public Function enableXAxesCubeMovement(direction As String) As Boolean
+
+    If direction = "right" Then
+      timer_moveRight.Start()
+    ElseIf direction = "left" Then
+      timer_moveLeft.Start()
+    End If
+    Return False
+  End Function
+
+  Public Function cleanXAxesCubeMovement(direction As String) As Boolean
+    If direction = "right" Then
+      timer_moveRight.Stop()
+    ElseIf direction = "left" Then
+      timer_moveLeft.Stop()
+    End If
+    Return False
+  End Function
 
 
 
@@ -147,22 +174,19 @@ Public Class Form1
     End If
 
 
-    End Sub
-    Private Sub timer_jump_Tick(sender As Object, e As EventArgs) Handles timer_jump.Tick
+  End Sub
 
-    End Sub
+  Private Sub pb1_LocationChanged(sender As Object, e As EventArgs) Handles pb1.LocationChanged
+    'If pb1.Bounds.IntersectsWith(pb2.Bounds) Then
+    'pb1.Location = New Point(pb1.Location.X - 1, pb1.Location.Y)
+    'End If
+  End Sub
 
-    Private Sub pb1_LocationChanged(sender As Object, e As EventArgs) Handles pb1.LocationChanged
-        'If pb1.Bounds.IntersectsWith(pb2.Bounds) Then
-        'pb1.Location = New Point(pb1.Location.X - 1, pb1.Location.Y)
-        'End If
-    End Sub
+  Private Sub timer_gravity_Tick(sender As Object, e As EventArgs) Handles timer_gravity.Tick
+    applyGravity()
+  End Sub
 
-    Private Sub timer_gravity_Tick(sender As Object, e As EventArgs) Handles timer_gravity.Tick
-        applyGravity()
-    End Sub
+  Private Sub col_Click(sender As Object, e As EventArgs) Handles col.Click
 
-    Private Sub col_Click(sender As Object, e As EventArgs) Handles col.Click
-
-    End Sub
+  End Sub
 End Class

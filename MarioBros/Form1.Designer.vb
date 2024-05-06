@@ -44,7 +44,7 @@ Partial Class Form1
         'pb1
         '
         Me.pb1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.pb1.Location = New System.Drawing.Point(320, 283)
+        Me.pb1.Location = New System.Drawing.Point(300, 300)
         Me.pb1.Name = "pb1"
         Me.pb1.Size = New System.Drawing.Size(100, 100)
         Me.pb1.TabIndex = 0
@@ -73,27 +73,25 @@ Partial Class Form1
         '
         'timer_jump
         '
-        Me.timer_jump.Interval = 10
+        Me.timer_jump.Interval = 1
         '
         'col
         '
-        Me.col.BackColor = System.Drawing.Color.Transparent
-        Me.col.Location = New System.Drawing.Point(420, 283)
+        Me.col.BackColor = System.Drawing.Color.SandyBrown
+        Me.col.Location = New System.Drawing.Point(400, 300)
         Me.col.Name = "col"
         Me.col.Size = New System.Drawing.Size(5, 100)
         Me.col.TabIndex = 4
         Me.col.TabStop = False
-        Me.col.Visible = False
         '
         'col2
         '
-        Me.col2.BackColor = System.Drawing.Color.Transparent
-        Me.col2.Location = New System.Drawing.Point(320, 283)
+        Me.col2.BackColor = System.Drawing.Color.SandyBrown
+        Me.col2.Location = New System.Drawing.Point(300, 300)
         Me.col2.Name = "col2"
         Me.col2.Size = New System.Drawing.Size(5, 100)
         Me.col2.TabIndex = 5
         Me.col2.TabStop = False
-        Me.col2.Visible = False
         '
         'PictureBox4
         '
