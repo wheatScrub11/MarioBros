@@ -1,8 +1,10 @@
-﻿Public Class Form1
+Public Class Form1
 
     Dim yAxeGroundPosition As Int64
-    Dim moveVal As Int64 = 5
-    Public Function applyGravity() As Boolean
+  Dim moveVal As Int64 = 5
+  Dim moveRight As Boolean = True
+  Dim moveLeft As Boolean = True
+  Public Function applyGravity() As Boolean
         If (pb1.Location.Y + 100) >= yAxeGroundPosition Then ''when reaches the ground
             System.Console.WriteLine("XDD")
             timer_gravity.Stop()
@@ -14,19 +16,13 @@
     End Function
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         yAxeGroundPosition = 400
-        timer_gravity.Start()
-        'System.Console.WriteLine(pb2.Location.X)
-        System.Console.WriteLine(pb1.Location.X + pb1.Width)
-    End Sub
+    timer_gravity.Start()
+  End Sub
 
 
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        ' Sets Handled to true to prevent other controls from
-        ' receiving the key if an arrow key was pressed
 
-
-
-        Dim bHandled As Boolean = False
+    Dim bHandled As Boolean = False
         System.Console.WriteLine(e.KeyData)
         Select Case e.KeyCode
             Case Keys.Right
@@ -84,51 +80,71 @@
 
 
 
-    Private Sub timer_moveRight_Tick(sender As Object, e As EventArgs) Handles timer_moveRight.Tick
+  Private Sub timer_moveRight_Tick(sender As Object, e As EventArgs) Handles timer_moveRight.Tick
+    If timer_moveRight.Enabled = True And timer_moveLeft.Enabled = True Then
+      pb1.Location = New Point(pb1.Location.X, pb1.Location.Y)
+    Else
 
-        System.Console.WriteLine("PASO")
-        If timer_moveRight.Enabled = True And timer_moveLeft.Enabled = True Then
-            pb1.Location = New Point(pb1.Location.X, pb1.Location.Y)
-        Else
+      For Each ctrl As Control In Me.Controls
+        If TypeOf ctrl Is PictureBox AndAlso ctrl.Tag = "walls" Then
+          Dim picBox As PictureBox = DirectCast(ctrl, PictureBox)
 
-            For Each ctrl As Control In Me.Controls
-                If TypeOf ctrl Is PictureBox AndAlso ctrl IsNot pb1 AndAlso ctrl IsNot PictureBox1 Then
-                    Dim picBox As PictureBox = DirectCast(ctrl, PictureBox)
+          If moveRight Then
+            If col.Bounds.IntersectsWith(picBox.Bounds) Then
+              Dim distance = picBox.Location.X - (pb1.Location.X + pb1.Width)
+              pb1.Location = New Point(pb1.Location.X + distance, pb1.Location.Y)
+              moveRight = False
 
-                    If pb1.Location.X + pb1.Width + moveVal >= picBox.Location.X AndAlso pb1.Location.X + pb1.Width + moveVal <= picBox.Location.X + picBox.Width Then
-                        System.Console.WriteLine("JAJJAJJA")
-                        System.Console.WriteLine(picBox.Location.X)
-                        System.Console.WriteLine(pb1.Location.X + pb1.Width)
-                        moveVal = picBox.Location.X - (pb1.Location.X + pb1.Width)
-                        System.Console.WriteLine(moveVal)
-                        pb1.Location = New Point(pb1.Location.X + moveVal, pb1.Location.Y)
+            Else
+              pb1.Location = New Point(pb1.Location.X + moveVal, pb1.Location.Y)
+              col.Location = New Point(col.Location.X + moveVal, col.Location.Y)
+              col2.Location = New Point(col2.Location.X + moveVal, col2.Location.Y)
+              moveLeft = True
 
-
-                        moveVal = 5
-
-                    ElseIf pb1.Location.X + pb1.Width = picBox.Location.X Then
-
-                    Else
-                        pb1.Location = New Point(pb1.Location.X + moveVal, pb1.Location.Y)
-
-                    End If
-                End If
-            Next
+            End If
+          Else
+            System.Console.WriteLine("NO SE PUEDE MOVER")
+          End If
 
 
-            'pb1.Location = New Point(pb1.Location.X + 15, pb1.Location.Y)
         End If
+      Next
+
+      'pb1.Location = New Point(pb1.Location.X + moveVal, pb1.Location.Y)
+    End If
 
 
 
-    End Sub
-    Private Sub timer_moveLeft_Tick(sender As Object, e As EventArgs) Handles timer_moveLeft.Tick
+  End Sub
+  Private Sub timer_moveLeft_Tick(sender As Object, e As EventArgs) Handles timer_moveLeft.Tick
 
-        If timer_moveRight.Enabled = True And timer_moveLeft.Enabled = True Then
-            pb1.Location = New Point(pb1.Location.X, pb1.Location.Y)
-        Else
-            pb1.Location = New Point(pb1.Location.X - 5, pb1.Location.Y)
+    If timer_moveRight.Enabled = True And timer_moveLeft.Enabled = True Then
+      pb1.Location = New Point(pb1.Location.X, pb1.Location.Y)
+    Else
+      For Each ctrl As Control In Me.Controls
+        If TypeOf ctrl Is PictureBox AndAlso ctrl.Tag = "walls" Then
+          Dim picBox As PictureBox = DirectCast(ctrl, PictureBox)
+
+          If moveLeft Then
+            If col2.Bounds.IntersectsWith(picBox.Bounds) Then
+              Dim distance = pb1.Location.X - (picBox.Location.X + picBox.Width)
+              pb1.Location = New Point(pb1.Location.X - distance, pb1.Location.Y)
+
+              moveLeft = False
+            Else
+              pb1.Location = New Point(pb1.Location.X - moveVal, pb1.Location.Y)
+              col2.Location = New Point(col2.Location.X - moveVal, col2.Location.Y)
+              col.Location = New Point(col.Location.X - moveVal, col.Location.Y)
+              moveRight = True
+
+            End If
+          Else
+            System.Console.WriteLine("No sep uede mover")
+          End If
         End If
+      Next
+
+    End If
 
 
     End Sub
@@ -146,7 +162,7 @@
         applyGravity()
     End Sub
 
+    Private Sub col_Click(sender As Object, e As EventArgs) Handles col.Click
 
-
-
+    End Sub
 End Class
