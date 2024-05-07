@@ -33,18 +33,22 @@ Partial Class Form1
         Me.col2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.col3 = New System.Windows.Forms.PictureBox()
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.col3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pb1
         '
         Me.pb1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.pb1.Location = New System.Drawing.Point(300, 300)
+        Me.pb1.Location = New System.Drawing.Point(295, 224)
         Me.pb1.Name = "pb1"
         Me.pb1.Size = New System.Drawing.Size(100, 100)
         Me.pb1.TabIndex = 0
@@ -78,25 +82,25 @@ Partial Class Form1
         'col
         '
         Me.col.BackColor = System.Drawing.Color.SandyBrown
-        Me.col.Location = New System.Drawing.Point(400, 300)
+        Me.col.Location = New System.Drawing.Point(395, 224)
         Me.col.Name = "col"
-        Me.col.Size = New System.Drawing.Size(5, 100)
+        Me.col.Size = New System.Drawing.Size(5, 98)
         Me.col.TabIndex = 4
         Me.col.TabStop = False
         '
         'col2
         '
         Me.col2.BackColor = System.Drawing.Color.SandyBrown
-        Me.col2.Location = New System.Drawing.Point(300, 300)
+        Me.col2.Location = New System.Drawing.Point(290, 224)
         Me.col2.Name = "col2"
-        Me.col2.Size = New System.Drawing.Size(5, 100)
+        Me.col2.Size = New System.Drawing.Size(5, 98)
         Me.col2.TabIndex = 5
         Me.col2.TabStop = False
         '
         'PictureBox4
         '
         Me.PictureBox4.BackColor = System.Drawing.Color.Tomato
-        Me.PictureBox4.Location = New System.Drawing.Point(486, 271)
+        Me.PictureBox4.Location = New System.Drawing.Point(741, 237)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(100, 100)
         Me.PictureBox4.TabIndex = 7
@@ -113,11 +117,32 @@ Partial Class Form1
         Me.PictureBox2.TabStop = False
         Me.PictureBox2.Tag = "walls"
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Tomato
+        Me.PictureBox3.Location = New System.Drawing.Point(520, 271)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox3.TabIndex = 9
+        Me.PictureBox3.TabStop = False
+        Me.PictureBox3.Tag = "walls"
+        '
+        'col3
+        '
+        Me.col3.BackColor = System.Drawing.Color.SandyBrown
+        Me.col3.Location = New System.Drawing.Point(296, 324)
+        Me.col3.Name = "col3"
+        Me.col3.Size = New System.Drawing.Size(98, 5)
+        Me.col3.TabIndex = 10
+        Me.col3.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(924, 491)
+        Me.Controls.Add(Me.col3)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.col2)
@@ -133,6 +158,8 @@ Partial Class Form1
         CType(Me.col2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.col3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -147,4 +174,6 @@ Partial Class Form1
     Friend WithEvents col2 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents col3 As PictureBox
 End Class
