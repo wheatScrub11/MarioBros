@@ -43,6 +43,7 @@ Partial Class Form1
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.col4 = New System.Windows.Forms.PictureBox()
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,6 +60,7 @@ Partial Class Form1
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.col4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pb1
@@ -232,11 +234,21 @@ Partial Class Form1
         Me.PictureBox12.TabStop = False
         Me.PictureBox12.Tag = "walls"
         '
+        'col4
+        '
+        Me.col4.BackColor = System.Drawing.Color.SandyBrown
+        Me.col4.Location = New System.Drawing.Point(296, 219)
+        Me.col4.Name = "col4"
+        Me.col4.Size = New System.Drawing.Size(48, 5)
+        Me.col4.TabIndex = 22
+        Me.col4.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(924, 491)
+        Me.Controls.Add(Me.col4)
         Me.Controls.Add(Me.PictureBox12)
         Me.Controls.Add(Me.PictureBox11)
         Me.Controls.Add(Me.PictureBox10)
@@ -272,6 +284,7 @@ Partial Class Form1
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.col4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -296,4 +309,5 @@ Partial Class Form1
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents PictureBox12 As PictureBox
+    Friend WithEvents col4 As PictureBox
 End Class
