@@ -334,6 +334,10 @@ Public Class Form1
     Private Sub col4_LocationChanged(sender As Object, e As EventArgs) Handles col4.LocationChanged
         checkCeilingCollision()
     End Sub
+
+    Private Sub col3_Click(sender As Object, e As EventArgs) Handles col3.Click
+
+    End Sub
 End Class
 
 
