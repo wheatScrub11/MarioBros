@@ -13,6 +13,7 @@ Public Class Form1
     Dim rightCollision As PictureBox
     Dim isTouchingLeft As Boolean = False
     Dim leftCollision As PictureBox
+    Dim isTouchingStickyCeiling As Boolean = False
 
     Dim moveVal As Int64 = 5
     Dim moveRight As Boolean = True
@@ -37,6 +38,32 @@ Public Class Form1
     ' custom objects
     Private enemy1 As New BasicEnemy1
     Private enemy2 As New BasicEnemy1
+
+    Private bullet1 As New BasicBullet1
+    Private bullet2 As New BasicBullet1
+
+
+    Public Function setBasicBullet1Properties(obj As BasicBullet1, count As Integer, size As Size, location As Point, bulletDirection As String) As Boolean
+        Dim objName As String = "basicBullet" & count
+        obj.bulletDirection = bulletDirection
+        obj.xPosition = location.X
+        obj.yPosition = location.Y
+        obj.Size = New Size(size.Width, size.Height)
+        obj.Location = New Point(location.X, location.Y - obj.Height)
+        obj.Image = beeIdle
+        obj.SizeMode = PictureBoxSizeMode.StretchImage
+        obj.Name = objName
+        obj.Tag = "spikes"
+        obj.BackColor = Color.Transparent
+
+        Me.Controls.Add(obj)
+
+
+        Return False
+
+    End Function
+
+
 
     Public Function setBasicEnemy1Properties(obj As BasicEnemy1, count As Integer, size As Size, location As Point) As Boolean
         Dim objName As String = "basicEnemy" & count
@@ -81,21 +108,28 @@ Public Class Form1
                 If groundCollision.Tag = "walls" Then
                     yAxeGroundPosition = groundCollision.Location.Y
                 ElseIf groundCollision.Tag = "spikes" Then
-                    pb1.Location = New Point(spawnX, spanwY)
-                    col.Location = New Point(pb1.Location.X + pb1.Width, pb1.Location.Y + 1)
-                    col2.Location = New Point(pb1.Location.X - 5, pb1.Location.Y + 1)
-                    col3.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + pb1.Height)
-                    col4.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + 5)
+                    movePlayerToSpawnPoint()
                 End If
             End If
 
 
             If isTouchingCeiling Then
-                velocityY = ceilingCollision.Location.Y
+                If ceilingCollision.Tag = "walls2" Then
+                    isTouchingStickyCeiling = True
+                    velocityY = 0
+                    yAxeGroundPosition = ceilingCollision.Location.Y + ceilingCollision.Height
+                    movePlayerToPoint(pb1.Location.X, yAxeGroundPosition)
+                    movePlayerHitboxes(moveVal, "jump")
+                    isJumping = False
+
+                ElseIf ceilingCollision.Tag = "walls" Then
+                    velocityY = ceilingCollision.Location.Y
+                End If
+
             End If
 
 
-            If pb1.Location.Y >= yAxeGroundPosition - pb1.Height Then
+            If pb1.Location.Y >= yAxeGroundPosition - pb1.Height AndAlso isTouchingStickyCeiling = False Then
                 movePlayerToPoint(pb1.Location.X, yAxeGroundPosition - pb1.Height)
                 movePlayerHitboxes(moveVal, "jump")
                 velocityY = 0
@@ -126,11 +160,7 @@ Public Class Form1
             End If
 
             If res IsNot Nothing AndAlso res.Item2.Tag = "spikes" Then
-                pb1.Location = New Point(spawnX, spanwY)
-                col.Location = New Point(pb1.Location.X + pb1.Width, pb1.Location.Y + 1)
-                col2.Location = New Point(pb1.Location.X - 5, pb1.Location.Y + 1)
-                col3.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + pb1.Height)
-                col4.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + 5)
+                movePlayerToSpawnPoint()
             ElseIf res IsNot Nothing AndAlso res.Item2.Tag = "walls" Then
                 incrementalFallingValue = res.Item2.Location.Y - (pb1.Location.Y + pb1.Height)
 
@@ -153,8 +183,12 @@ Public Class Form1
     End Function
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        createCharacterAndItsHitboxes(New Size(50, 50), New Point(26, 429))
         setBasicEnemy1Properties(enemy1, 1, New Size(50, 50), New Point(800, 490))
         setBasicEnemy1Properties(enemy2, 2, New Size(30, 30), New Point(470, 330))
+        setBasicBullet1Properties(bullet1, 1, New Size(10, 10), New Point(650, 533), "left")
+        setBasicBullet1Properties(bullet2, 1, New Size(10, 10), New Point(445, 380), "down")
+
         ResizeAllControls(Me)
         pb1.Image = sansidle
         yAxeGroundPosition = PictureBox1.Location.Y
@@ -192,10 +226,17 @@ Public Class Form1
                 enableXAxesCubeMovement("left")
                 e.Handled = True
             Case Keys.Up
-                If Not isJumping Then 
+                If Not isJumping AndAlso isTouchingStickyCeiling = False Then
                     timer_gravity.Stop() ' we want to disable the falling gravity timer so it doesnt disturb the jump gravity
                     isJumping = True
                     velocityY = jumpSpeed
+                End If
+            Case Keys.Space
+                If isTouchingStickyCeiling Then
+                    yAxeGroundPosition = PictureBox6.Location.Y ' intentará caer a el suelo base, a menos que se encuentre con otro muro en applyGravity()
+                    timer_gravity.Start()
+                    isTouchingStickyCeiling = False
+
                 End If
             Case Keys.Down
 
@@ -293,11 +334,7 @@ Public Class Form1
         Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col)
 
         If res IsNot Nothing AndAlso res.Item2.Tag = "spikes" Then
-            pb1.Location = New Point(spawnX, spanwY)
-            col.Location = New Point(pb1.Location.X + pb1.Width, pb1.Location.Y + 1)
-            col2.Location = New Point(pb1.Location.X - 5, pb1.Location.Y + 1)
-            col3.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + pb1.Height)
-            col4.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + 5)
+            movePlayerToSpawnPoint()
 
         ElseIf res IsNot Nothing AndAlso res.Item2.Tag = "walls" Then
             isTouchingRight = True
@@ -333,11 +370,7 @@ Public Class Form1
         Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col2)
 
         If res IsNot Nothing AndAlso res.Item2.Tag = "spikes" Then
-            pb1.Location = New Point(spawnX, spanwY)
-            col.Location = New Point(pb1.Location.X + pb1.Width, pb1.Location.Y + 1)
-            col2.Location = New Point(pb1.Location.X - 5, pb1.Location.Y + 1)
-            col3.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + pb1.Height)
-            col4.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + 5)
+            movePlayerToSpawnPoint()
 
         ElseIf res IsNot Nothing AndAlso res.Item1 = True Then
             isTouchingLeft = True
@@ -426,8 +459,13 @@ Public Class Form1
         If res IsNot Nothing AndAlso res.Item1 = True Then
             isTouchingCeiling = True
             ceilingCollision = res.Item2
+
             'velocityY = ceilingCollision.Location.Y
         Else
+            If timer_gravity.Enabled = False AndAlso isTouchingStickyCeiling = True Then
+                timer_gravity.Start()
+                isTouchingStickyCeiling = False
+            End If
             isTouchingCeiling = False
         End If
         Return False
@@ -480,11 +518,7 @@ Public Class Form1
                     Dim res2 As Tuple(Of Boolean, PictureBox) = checkCollision(enemy)
 
                     If res2 IsNot Nothing AndAlso res2.Item2.Name = "pb1" Then
-                        pb1.Location = New Point(spawnX, spanwY)
-                        col.Location = New Point(pb1.Location.X + pb1.Width, pb1.Location.Y + 1)
-                        col2.Location = New Point(pb1.Location.X - 5, pb1.Location.Y + 1)
-                        col3.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + pb1.Height)
-                        col4.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + 5)
+                        movePlayerToSpawnPoint()
                     End If
 
                     If res IsNot Nothing AndAlso res.Item2.Tag = "walls" Then
@@ -526,6 +560,40 @@ Public Class Form1
     End Sub
 
 
+    Private Sub basicbullet1timer_Tick(sender As Object, e As EventArgs) Handles basicbullet1timer.Tick
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is BasicBullet1 Then
+                Dim b As BasicBullet1 = DirectCast(ctrl, BasicBullet1)
+
+
+                If b.bulletDirection = "right" Then
+                    b.Location = New Point(b.Location.X + 3, b.Location.Y)
+                ElseIf b.bulletDirection = "left" Then
+                    b.Location = New Point(b.Location.X - 3, b.Location.Y)
+                ElseIf b.bulletDirection = "up" Then
+                    b.Location = New Point(b.Location.X, b.Location.Y - 3)
+                ElseIf b.bulletDirection = "down" Then
+                    b.Location = New Point(b.Location.X, b.Location.Y + 3)
+
+                End If
+
+
+                Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(b)
+
+                If res IsNot Nothing AndAlso res.Item2.Tag = "walls" Then
+                    b.Location = New Point(b.xPosition, b.yPosition)
+                ElseIf res IsNot Nothing AndAlso res.Item2.Name = "pb1" Then
+                    movePlayerToSpawnPoint()
+                End If
+
+
+
+            End If
+        Next
+    End Sub
+
+
+
     ' UTILITY FUNCTIONS
 
     Public Function checkCollision(collider As PictureBox) As Tuple(Of Boolean, PictureBox)
@@ -533,7 +601,7 @@ Public Class Form1
         Dim collisionMatch As PictureBox = New PictureBox
 
         For Each ctrl In Me.Controls
-            If TypeOf ctrl Is PictureBox AndAlso (ctrl.Tag = "walls" Or ctrl.Tag = "spikes" Or ctrl.Name = "pb1") Then
+            If TypeOf ctrl Is PictureBox AndAlso (ctrl.Tag = "walls" Or ctrl.Tag = "spikes" Or ctrl.tag = "walls2" Or ctrl.Name = "pb1") Then
                 Dim wall As PictureBox = DirectCast(ctrl, PictureBox)
 
                 If collider.Bounds.IntersectsWith(wall.Bounds) Then
@@ -558,6 +626,55 @@ Public Class Form1
         ' If no control is found, return Nothing
         Return Nothing
     End Function
+
+    Public Function movePlayerToSpawnPoint() As Boolean
+        pb1.Location = New Point(spawnX, spanwY)
+        col.Location = New Point(pb1.Location.X + pb1.Width, pb1.Location.Y + 1)
+        col2.Location = New Point(pb1.Location.X - 5, pb1.Location.Y + 1)
+        col3.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + pb1.Height)
+        col4.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + 5)
+        Return False
+    End Function
+
+    Public Function createCharacterAndItsHitboxes(size As Size, loc As Point) As Boolean
+
+        pb1.Name = "pb1"
+        pb1.BackColor = Color.Transparent
+        pb1.Size = New Size(size.Width, size.Height)
+        pb1.Location = New Point(loc.X, loc.Y)
+
+        col.Name = "col"
+        col.BackColor = Color.Orange
+        col.Size = New Size(5, pb1.Height - 2)
+        col.Location = New Point(pb1.Location.X + pb1.Width, pb1.Location.Y + 1)
+
+        col2.Name = "col2"
+        col2.BackColor = Color.Orange
+        col2.Size = New Size(5, pb1.Height - 2)
+        col2.Location = New Point(pb1.Location.X - 5, pb1.Location.Y + 1)
+
+        col3.Name = "col3"
+        col3.BackColor = Color.Orange
+        col3.Size = New Size(pb1.Width - 2, 5)
+        col3.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + pb1.Height)
+
+        col4.Name = "col4"
+        col4.BackColor = Color.Orange
+        col4.Size = New Size(pb1.Width - 2, 5)
+        col4.Location = New Point(pb1.Location.X + 1, pb1.Location.Y - 5)
+
+        Me.Controls.Add(pb1)
+        Me.Controls.Add(col)
+        Me.Controls.Add(col2)
+        Me.Controls.Add(col3)
+        Me.Controls.Add(col4)
+
+
+
+
+    End Function
+
+
 End Class
 
 

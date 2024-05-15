@@ -75,6 +75,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicBullet1.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BasicEnemy1.vb">
       <SubType>Component</SubType>
     </Compile>
