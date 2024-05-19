@@ -37,7 +37,6 @@ Partial Class Form1
         Me.col4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
         Me.PictureBox18 = New System.Windows.Forms.PictureBox()
         Me.PictureBox21 = New System.Windows.Forms.PictureBox()
         Me.PictureBox23 = New System.Windows.Forms.PictureBox()
@@ -46,18 +45,16 @@ Partial Class Form1
         Me.PictureBox20 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.basicenemy1timer = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
+        Me.t1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.basicbullet1timer = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,7 +64,6 @@ Partial Class Form1
         CType(Me.col4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox23, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,16 +71,14 @@ Partial Class Form1
         CType(Me.PictureBox25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pb1
@@ -94,6 +88,7 @@ Partial Class Form1
         Me.pb1.Location = New System.Drawing.Point(52, 490)
         Me.pb1.Name = "pb1"
         Me.pb1.Size = New System.Drawing.Size(51, 87)
+        Me.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb1.TabIndex = 0
         Me.pb1.TabStop = False
         '
@@ -184,7 +179,7 @@ Partial Class Form1
         Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Location = New System.Drawing.Point(260, 561)
+        Me.PictureBox4.Location = New System.Drawing.Point(321, 558)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(44, 48)
         Me.PictureBox4.TabIndex = 24
@@ -194,22 +189,12 @@ Partial Class Form1
         'PictureBox7
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.PictureBox7.Location = New System.Drawing.Point(214, 424)
+        Me.PictureBox7.Location = New System.Drawing.Point(270, 533)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(10, 10)
         Me.PictureBox7.TabIndex = 27
         Me.PictureBox7.TabStop = False
         Me.PictureBox7.Tag = "walls"
-        '
-        'PictureBox17
-        '
-        Me.PictureBox17.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.PictureBox17.Location = New System.Drawing.Point(230, 218)
-        Me.PictureBox17.Name = "PictureBox17"
-        Me.PictureBox17.Size = New System.Drawing.Size(100, 19)
-        Me.PictureBox17.TabIndex = 37
-        Me.PictureBox17.TabStop = False
-        Me.PictureBox17.Tag = "walls"
         '
         'PictureBox18
         '
@@ -244,9 +229,9 @@ Partial Class Form1
         'PictureBox24
         '
         Me.PictureBox24.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.PictureBox24.Location = New System.Drawing.Point(512, 112)
+        Me.PictureBox24.Location = New System.Drawing.Point(92, 1)
         Me.PictureBox24.Name = "PictureBox24"
-        Me.PictureBox24.Size = New System.Drawing.Size(10, 10)
+        Me.PictureBox24.Size = New System.Drawing.Size(233, 10)
         Me.PictureBox24.TabIndex = 45
         Me.PictureBox24.TabStop = False
         Me.PictureBox24.Tag = "walls"
@@ -285,55 +270,35 @@ Partial Class Form1
         Me.basicenemy1timer.Enabled = True
         Me.basicenemy1timer.Interval = 10
         '
-        'PictureBox19
+        't1
         '
-        Me.PictureBox19.BackColor = System.Drawing.Color.Maroon
-        Me.PictureBox19.Location = New System.Drawing.Point(736, 490)
-        Me.PictureBox19.Name = "PictureBox19"
-        Me.PictureBox19.Size = New System.Drawing.Size(137, 34)
-        Me.PictureBox19.TabIndex = 40
-        Me.PictureBox19.TabStop = False
-        Me.PictureBox19.Tag = "walls"
+        Me.t1.BackColor = System.Drawing.Color.Maroon
+        Me.t1.Location = New System.Drawing.Point(736, 490)
+        Me.t1.Name = "t1"
+        Me.t1.Size = New System.Drawing.Size(137, 34)
+        Me.t1.TabIndex = 40
+        Me.t1.TabStop = False
+        Me.t1.Tag = "walls"
         '
         'PictureBox5
         '
         Me.PictureBox5.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.PictureBox5.Location = New System.Drawing.Point(291, 516)
+        Me.PictureBox5.Location = New System.Drawing.Point(358, 527)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(32, 58)
         Me.PictureBox5.TabIndex = 49
         Me.PictureBox5.TabStop = False
         Me.PictureBox5.Tag = "walls"
         '
-        'PictureBox8
-        '
-        Me.PictureBox8.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.PictureBox8.Location = New System.Drawing.Point(214, 317)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(60, 10)
-        Me.PictureBox8.TabIndex = 50
-        Me.PictureBox8.TabStop = False
-        Me.PictureBox8.Tag = "walls"
-        '
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.PictureBox3.Location = New System.Drawing.Point(0, 342)
+        Me.PictureBox3.Location = New System.Drawing.Point(-16, 205)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(148, 25)
+        Me.PictureBox3.Size = New System.Drawing.Size(148, 23)
         Me.PictureBox3.TabIndex = 51
         Me.PictureBox3.TabStop = False
         Me.PictureBox3.Tag = "walls"
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox9.Location = New System.Drawing.Point(274, 580)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(17, 29)
-        Me.PictureBox9.TabIndex = 52
-        Me.PictureBox9.TabStop = False
-        Me.PictureBox9.Tag = "spikes"
         '
         'PictureBox10
         '
@@ -382,22 +347,22 @@ Partial Class Form1
         'PictureBox13
         '
         Me.PictureBox13.BackColor = System.Drawing.Color.Magenta
-        Me.PictureBox13.Location = New System.Drawing.Point(0, 457)
+        Me.PictureBox13.Location = New System.Drawing.Point(0, 218)
         Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Size = New System.Drawing.Size(164, 11)
+        Me.PictureBox13.Size = New System.Drawing.Size(132, 225)
         Me.PictureBox13.TabIndex = 56
         Me.PictureBox13.TabStop = False
         Me.PictureBox13.Tag = "walls2"
         '
-        'PictureBox14
+        'PictureBox8
         '
-        Me.PictureBox14.BackColor = System.Drawing.Color.Magenta
-        Me.PictureBox14.Location = New System.Drawing.Point(154, 342)
-        Me.PictureBox14.Name = "PictureBox14"
-        Me.PictureBox14.Size = New System.Drawing.Size(10, 115)
-        Me.PictureBox14.TabIndex = 57
-        Me.PictureBox14.TabStop = False
-        Me.PictureBox14.Tag = "walls3"
+        Me.PictureBox8.BackColor = System.Drawing.Color.Magenta
+        Me.PictureBox8.Location = New System.Drawing.Point(270, 167)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(132, 225)
+        Me.PictureBox8.TabIndex = 57
+        Me.PictureBox8.TabStop = False
+        Me.PictureBox8.Tag = "walls2"
         '
         'Form1
         '
@@ -406,15 +371,13 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1264, 681)
-        Me.Controls.Add(Me.PictureBox14)
+        Me.Controls.Add(Me.PictureBox8)
         Me.Controls.Add(Me.PictureBox13)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox12)
         Me.Controls.Add(Me.PictureBox11)
         Me.Controls.Add(Me.PictureBox10)
-        Me.Controls.Add(Me.PictureBox9)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox8)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.pb1)
@@ -428,12 +391,11 @@ Partial Class Form1
         Me.Controls.Add(Me.PictureBox23)
         Me.Controls.Add(Me.PictureBox21)
         Me.Controls.Add(Me.PictureBox18)
-        Me.Controls.Add(Me.PictureBox17)
         Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.PictureBox19)
+        Me.Controls.Add(Me.t1)
         Me.DoubleBuffered = True
         Me.KeyPreview = True
         Me.Name = "Form1"
@@ -448,7 +410,6 @@ Partial Class Form1
         CType(Me.col4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox23, System.ComponentModel.ISupportInitialize).EndInit()
@@ -456,16 +417,14 @@ Partial Class Form1
         CType(Me.PictureBox25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -484,7 +443,6 @@ Partial Class Form1
     Friend WithEvents col4 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents PictureBox17 As PictureBox
     Friend WithEvents PictureBox18 As PictureBox
     Friend WithEvents PictureBox21 As PictureBox
     Friend WithEvents PictureBox23 As PictureBox
@@ -493,16 +451,14 @@ Partial Class Form1
     Friend WithEvents PictureBox20 As PictureBox
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents basicenemy1timer As Timer
-    Friend WithEvents PictureBox19 As PictureBox
+    Friend WithEvents t1 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents PictureBox12 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents basicbullet1timer As Timer
     Friend WithEvents PictureBox13 As PictureBox
-    Friend WithEvents PictureBox14 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
 End Class

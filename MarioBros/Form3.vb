@@ -1,4 +1,4 @@
-Public Class Form1
+ï»¿Public Class Form3
     Dim velocityY As Double = 0
     Dim gravity As Double = 25.8
     Dim jumpSpeed As Double = -550
@@ -23,14 +23,16 @@ Public Class Form1
 
     Dim initialFormSize As Size
 
+    Dim starCount As Integer = 0
+
     ' settings
     Public Property ScreenHeight As Double
     Public Property ScreenWidth As Double
 
     Public Property scalorX As Double
     Public Property scalorY As Double
-    Dim spawnX As Integer = 0
-    Dim spanwY As Integer = 440
+    Dim spawnX As Integer = 10
+    Dim spanwY As Integer = 230
 
     'Sprites
 
@@ -94,35 +96,6 @@ Public Class Form1
 
 
 
-    'Public Function setBasicEnemy1Properties(obj As BasicEnemy1, count As Integer, size As Size, location As Point) As Boolean
-    '    Dim objName As String = "basicEnemy" & count
-    '    Dim hitboxName As String = objName & "Hitbox"
-
-    '    obj.MovingDirection = "left"
-    '    obj.ReachedLimit = False
-    '    obj.Size = New Size(size.Width, size.Height)
-    '    obj.Location = New Point(location.X, location.Y - obj.Height)
-    '    obj.Image = beeIdle
-    '    obj.SizeMode = PictureBoxSizeMode.StretchImage
-    '    obj.Name = objName
-    '    obj.Tag = "spikes"
-    '    obj.BackColor = Color.Transparent
-
-
-    '    Dim hitbox As New PictureBox
-
-    '    hitbox.Size = New Size(5, 20)
-    '    hitbox.Location = New Point(obj.Location.X + (obj.Width / 2), obj.Location.Y + obj.Height)
-    '    hitbox.Name = hitboxName
-    '    hitbox.BackColor = Color.Red
-    '    hitbox.BringToFront()
-
-    '    Me.Controls.Add(obj)
-    '    Me.Controls.Add(hitbox)
-
-    'End Function
-
-
 
     Private Sub timer_jump_Tick(sender As Object, e As EventArgs) Handles timer_jump.Tick
         If isJumping Then
@@ -180,15 +153,15 @@ Public Class Form1
 
 
     Public Function applyGravity() As Boolean
-        If (pb1.Location.Y + pb1.Height) >= yAxeGroundPosition Then ''Cuando llega al suelo pues no hace nada, lo dejo acá por si acaso
+        If (pb1.Location.Y + pb1.Height) >= yAxeGroundPosition Then ''Cuando llega al suelo pues no hace nada, lo dejo acÃ¡ por si acaso
             'System.Console.WriteLine("fghfghf")
             'timer_gravity.Stop()
         Else
             Dim incrementalFallingValue As Double = 6
 
-            ' calcula la colision más próxima para que el valor de caída no sobrepase la estructura.
-            ' la caída incrementa cada 5, pero si en algun momento la posicion del jugador + 5 es mayor a
-            ' la de la altura del suelo pues lo traspasa. Este cálculo arregla eso para que en vez de ser 5,
+            ' calcula la colision mÃ¡s prÃ³xima para que el valor de caÃ­da no sobrepase la estructura.
+            ' la caÃ­da incrementa cada 5, pero si en algun momento la posicion del jugador + 5 es mayor a
+            ' la de la altura del suelo pues lo traspasa. Este cÃ¡lculo arregla eso para que en vez de ser 5,
             ' sea la distancia menor posible
             Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col3)
             If res IsNot Nothing Then
@@ -222,40 +195,20 @@ Public Class Form1
         Return False
     End Function
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        createCharacterAndItsHitboxes(New Size(50, 50), New Point(26, PictureBox6.Location.Y - 50))
-        setBasicEnemy1Properties(enemy1, 1, New Size(50, 50), New Point(800, 490), t1.Location.X, t1.Location.X + t1.Width, "horizontal")
-        setBasicEnemy1Properties(enemy2, 2, New Size(50, 50), New Point(206, 340), 240, 400, "vertical")
-        setBasicBullet1Properties(bullet1, 1, New Size(10, 10), New Point(650, 533), "left")
-        setBasicBullet1Properties(bullet2, 2, New Size(10, 10), New Point(445, 380), "down")
-        setBasicBullet1Properties(bullet3, 3, New Size(20, 20), New Point(150, 450), "up")
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        createCharacterAndItsHitboxes(New Size(30, 40), New Point(spawnX, spanwY))
+
 
         'ResizeAllControls(Me)
         pb1.Image = sansidle
         yAxeGroundPosition = PictureBox1.Location.Y
+        starscheck.Start()
         timer_gravity.Start()
         timer_jump.Start()
     End Sub
-    Private Sub ResizeAllControls(parentControl As Control)
-        System.Console.WriteLine(OptionsMenu.screenWidth.GetType())
-        System.Console.WriteLine(initialFormSize.Width.GetType())
-        ' Calculate the scale factors
-        Dim scaleFactorX As Double = ScreenWidth / 1280 ' Assuming 1280 is the original width
-        Dim scaleFactorY As Double = ScreenHeight / 720 ' Assuming 720 is the original height
 
 
-        For Each ctrl As Control In parentControl.Controls
-            ' Apply the scale factors to each control's location and size
-            ctrl.Location = New Point(CInt(ctrl.Location.X * scaleFactorX), CInt(ctrl.Location.Y * scaleFactorY))
-            ctrl.Size = New Size(CInt(ctrl.Size.Width * scaleFactorX), CInt(ctrl.Size.Height * scaleFactorY))
-
-            ' Recursively apply to child controls (e.g., controls within a GroupBox or Panel)
-            ResizeAllControls(ctrl)
-        Next
-    End Sub
-
-
-    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+    Private Sub Form3_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
 
         Dim bHandled As Boolean = False
 
@@ -274,7 +227,7 @@ Public Class Form1
                 End If
             Case Keys.Space
                 If isTouchingStickyCeiling Then
-                    yAxeGroundPosition = PictureBox6.Location.Y ' intentará caer a el suelo base, a menos que se encuentre con otro muro en applyGravity()
+                    yAxeGroundPosition = PictureBox1.Location.Y ' intentarÃ¡ caer a el suelo base, a menos que se encuentre con otro muro en applyGravity()
                     timer_gravity.Start()
                     isTouchingStickyCeiling = False
 
@@ -286,7 +239,7 @@ Public Class Form1
         End Select
     End Sub
 
-    Private Sub Form1_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
+    Private Sub Form3_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
         ' Sets Handled to true to prevent other controls from
         ' receiving the key if an arrow key was pressed
         Dim bHandled As Boolean = False
@@ -377,7 +330,7 @@ Public Class Form1
         If res IsNot Nothing AndAlso res.Item2.Tag = "spikes" Then
             movePlayerToSpawnPoint()
 
-        ElseIf res IsNot Nothing AndAlso res.Item1 = True Then
+        ElseIf res IsNot Nothing AndAlso (res.Item2.Tag = "walls" Or res.Item2.Tag = "walls2") Then
             If res.Item2.Tag = "walls2" Then
                 isTouchingStickyWall = True
             End If
@@ -417,7 +370,7 @@ Public Class Form1
         If res IsNot Nothing AndAlso res.Item2.Tag = "spikes" Then
             movePlayerToSpawnPoint()
 
-        ElseIf res IsNot Nothing AndAlso res.Item1 = True Then
+        ElseIf res IsNot Nothing AndAlso (res.Item2.Tag = "walls" Or res.Item2.Tag = "walls2") Then
             isTouchingLeft = True
             leftCollision = res.Item2
 
@@ -460,7 +413,7 @@ Public Class Form1
                 Dim wall As PictureBox = DirectCast(ctrl, PictureBox)
 
 
-                If col.Bounds.IntersectsWith(wall.Bounds) AndAlso wall.Bounds.IntersectsWith(col.Bounds) Then
+                If col.Bounds.IntersectsWith(wall.Bounds) AndAlso wall.Bounds.IntersectsWith(col.Bounds) AndAlso (wall.Tag = "walls" Or wall.Tag = "walls2") Then
                     If wall.Tag = "walls2" Then
                         isTouchingStickyWall = True
                     End If
@@ -480,7 +433,7 @@ Public Class Form1
             If TypeOf ctrl Is PictureBox AndAlso (ctrl.Tag = "walls" Or ctrl.Tag = "walls2") Then
                 Dim wall As PictureBox = DirectCast(ctrl, PictureBox)
 
-                If col2.Bounds.IntersectsWith(wall.Bounds) AndAlso wall.Bounds.IntersectsWith(col2.Bounds) Then
+                If col2.Bounds.IntersectsWith(wall.Bounds) AndAlso wall.Bounds.IntersectsWith(col2.Bounds) AndAlso (wall.Tag = "walls" Or wall.Tag = "walls2") Then
                     If wall.Tag = "walls2" Then
                         isTouchingStickyWall = True
                     End If
@@ -498,7 +451,7 @@ Public Class Form1
     Public Function checkGroundCollision() As Boolean
         Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col3)
 
-        If res IsNot Nothing AndAlso res.Item1 = True Then
+        If res IsNot Nothing AndAlso res.Item1 = True AndAlso res.Item2.Tag = "walls" Then
             isTouchingGround = True
             groundCollision = res.Item2
         Else
@@ -510,7 +463,7 @@ Public Class Form1
     End Function
 
     Public Function checkCeilingCollision() As Boolean
-        Label1.Text = col4.Location.Y
+        'Label1.Text = col4.Location.Y
         Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col4)
 
         If res IsNot Nothing AndAlso res.Item1 = True Then
@@ -549,60 +502,6 @@ Public Class Form1
         checkCeilingCollision()
     End Sub
 
-
-    ''enemy timers
-    'Private Sub basicenemy1timer_Tick(sender As Object, e As EventArgs) Handles basicenemy1timer.Tick
-    '    For Each ctrl As Control In Me.Controls
-    '        If TypeOf ctrl Is BasicEnemy1 Then
-    '            Dim enemy As BasicEnemy1 = DirectCast(ctrl, BasicEnemy1)
-    '            Dim enemyHitboxName As String = enemy.Name & "Hitbox"
-    '            Dim enemyHitbox As PictureBox = getPictureBoxByName(enemyHitboxName)
-    '            ' System.Console.WriteLine(enemyHitboxName)
-
-    '            If enemy.ReachedLimit = False Then
-
-    '                If enemy.MovingDirection = "left" Then
-    '                    enemy.Location = New Point(enemy.Location.X - 1, enemy.Location.Y)
-    '                    enemyHitbox.Location = New Point(enemyHitbox.Location.X - 1, enemyHitbox.Location.Y)
-    '                Else
-    '                    enemy.Location = New Point(enemy.Location.X + 1, enemy.Location.Y)
-    '                    enemyHitbox.Location = New Point(enemyHitbox.Location.X + 1, enemyHitbox.Location.Y)
-
-
-    '                End If
-
-    '                Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(enemyHitbox)
-    '                Dim res2 As Tuple(Of Boolean, PictureBox) = checkCollision(enemy)
-
-    '                If res2 IsNot Nothing AndAlso res2.Item2.Name = "pb1" Then
-    '                    movePlayerToSpawnPoint()
-    '                End If
-
-    '                If res IsNot Nothing AndAlso res.Item2.Tag = "walls" Then
-    '                    enemy.ReachedLimit = False
-    '                Else
-    '                    enemy.ReachedLimit = True
-    '                End If
-
-
-    '            ElseIf enemy.ReachedLimit = True Then
-
-    '                If enemy.MovingDirection = "left" Then
-    '                    enemy.ReachedLimit = False
-    '                    enemy.MovingDirection = "right"
-    '                    enemy.Location = New Point(enemy.Location.X + 1, enemy.Location.Y)
-    '                    enemyHitbox.Location = New Point(enemyHitbox.Location.X + 1, enemyHitbox.Location.Y)
-
-    '                ElseIf enemy.MovingDirection = "right" Then
-    '                    enemy.ReachedLimit = False
-    '                    enemy.MovingDirection = "left"
-    '                    enemy.Location = New Point(enemy.Location.X - 1, enemy.Location.Y)
-    '                    enemyHitbox.Location = New Point(enemyHitbox.Location.X - 1, enemyHitbox.Location.Y)
-    '                End If
-    '            End If
-    '        End If
-    '    Next
-    'End Sub
 
     Private Sub basicenemy1timer_Tick(sender As Object, e As EventArgs) Handles basicenemy1timer.Tick
         For Each ctrl As Control In Me.Controls
@@ -692,7 +591,7 @@ Public Class Form1
         Dim collisionMatch As PictureBox = New PictureBox
 
         For Each ctrl In Me.Controls
-            If TypeOf ctrl Is PictureBox AndAlso (ctrl.Tag = "walls" Or ctrl.Tag = "spikes" Or ctrl.tag = "walls2" Or ctrl.Name = "pb1") Then
+            If TypeOf ctrl Is PictureBox AndAlso (ctrl.Tag = "walls" Or ctrl.Tag = "spikes" Or ctrl.tag = "walls2" Or ctrl.Name = "pb1" Or ctrl.tag = "stars" Or ctrl.name = "door") Then
                 Dim wall As PictureBox = DirectCast(ctrl, PictureBox)
 
                 If collider.Bounds.IntersectsWith(wall.Bounds) Then
@@ -761,12 +660,27 @@ Public Class Form1
         Me.Controls.Add(col4)
 
 
-
+        Return False
 
     End Function
 
+    Private Sub pb1_LocationChanged(sender As Object, e As EventArgs) Handles pb1.LocationChanged
+        Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(pb1)
 
+        If res IsNot Nothing AndAlso res.Item2.Tag = "stars" Then
+            System.Console.WriteLine("xddddd")
+            res.Item2.Location = New Point(5000, 5000)
+            starCount += 1
+            If starCount >= 3 Then
+
+                door.BackgroundImage = My.Resources.doorOpened
+                door.Location = New Point(1082, 467)
+
+            End If
+
+        ElseIf res IsNot Nothing AndAlso res.Item2.Name = "door" Then
+            Me.Hide()
+        End If
+
+    End Sub
 End Class
-
-
-
