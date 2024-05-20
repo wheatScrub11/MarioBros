@@ -127,6 +127,9 @@
   <data name="Bibi_sin_fondo__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bibi_sin_fondo (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="blade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adam-wade-new-piskel-ezgif.com-crop.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="doorClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\doorClosed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -226,5 +226,8 @@
   <ItemGroup>
     <None Include="Resources\personaje1 %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adam-wade-new-piskel-ezgif.com-crop.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

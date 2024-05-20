@@ -46,17 +46,6 @@ Partial Class Form4
         Me.PictureBox27 = New System.Windows.Forms.PictureBox()
         Me.PictureBox28 = New System.Windows.Forms.PictureBox()
         Me.PictureBox22 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox21 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox20 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox18 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
@@ -70,10 +59,34 @@ Partial Class Form4
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox33 = New System.Windows.Forms.PictureBox()
         Me.PictureBox32 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox34 = New System.Windows.Forms.PictureBox()
         Me.PictureBox35 = New System.Windows.Forms.PictureBox()
-        Me.BasicEnemy11 = New MarioBros.BasicEnemy1()
         Me.star1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox36 = New System.Windows.Forms.PictureBox()
+        Me.star2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox21 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox20 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox18 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox37 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox38 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox39 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox40 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox43 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox44 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox45 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox46 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox47 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox41 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox42 = New System.Windows.Forms.PictureBox()
+        Me.BasicEnemy12 = New MarioBros.BasicEnemy1()
+        Me.BasicEnemy11 = New MarioBros.BasicEnemy1()
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,17 +103,6 @@ Partial Class Form4
         CType(Me.PictureBox27, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox28, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox22, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,10 +116,34 @@ Partial Class Form4
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox33, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox34, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BasicEnemy11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.star1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.star2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox43, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox44, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox45, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox46, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox47, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BasicEnemy12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BasicEnemy11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pb1
@@ -188,6 +214,7 @@ Partial Class Form4
         Me.PictureBox1.Size = New System.Drawing.Size(1266, 106)
         Me.PictureBox1.TabIndex = 34
         Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Tag = "walls2"
         '
         'timer_moveRight
         '
@@ -323,127 +350,6 @@ Partial Class Form4
         Me.PictureBox22.TabIndex = 80
         Me.PictureBox22.TabStop = False
         Me.PictureBox22.Tag = "walls"
-        '
-        'PictureBox21
-        '
-        Me.PictureBox21.BackgroundImage = CType(resources.GetObject("PictureBox21.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox21.Location = New System.Drawing.Point(1057, 0)
-        Me.PictureBox21.Name = "PictureBox21"
-        Me.PictureBox21.Size = New System.Drawing.Size(145, 49)
-        Me.PictureBox21.TabIndex = 79
-        Me.PictureBox21.TabStop = False
-        Me.PictureBox21.Tag = "walls"
-        '
-        'PictureBox20
-        '
-        Me.PictureBox20.BackgroundImage = CType(resources.GetObject("PictureBox20.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox20.Location = New System.Drawing.Point(1007, 0)
-        Me.PictureBox20.Name = "PictureBox20"
-        Me.PictureBox20.Size = New System.Drawing.Size(51, 49)
-        Me.PictureBox20.TabIndex = 78
-        Me.PictureBox20.TabStop = False
-        Me.PictureBox20.Tag = "walls"
-        '
-        'PictureBox19
-        '
-        Me.PictureBox19.BackgroundImage = CType(resources.GetObject("PictureBox19.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox19.Location = New System.Drawing.Point(863, 0)
-        Me.PictureBox19.Name = "PictureBox19"
-        Me.PictureBox19.Size = New System.Drawing.Size(145, 49)
-        Me.PictureBox19.TabIndex = 77
-        Me.PictureBox19.TabStop = False
-        Me.PictureBox19.Tag = "walls"
-        '
-        'PictureBox18
-        '
-        Me.PictureBox18.BackgroundImage = CType(resources.GetObject("PictureBox18.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox18.Location = New System.Drawing.Point(719, 0)
-        Me.PictureBox18.Name = "PictureBox18"
-        Me.PictureBox18.Size = New System.Drawing.Size(145, 49)
-        Me.PictureBox18.TabIndex = 76
-        Me.PictureBox18.TabStop = False
-        Me.PictureBox18.Tag = "walls"
-        '
-        'PictureBox17
-        '
-        Me.PictureBox17.BackgroundImage = CType(resources.GetObject("PictureBox17.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox17.Location = New System.Drawing.Point(669, 0)
-        Me.PictureBox17.Name = "PictureBox17"
-        Me.PictureBox17.Size = New System.Drawing.Size(51, 49)
-        Me.PictureBox17.TabIndex = 75
-        Me.PictureBox17.TabStop = False
-        Me.PictureBox17.Tag = "walls"
-        '
-        'PictureBox16
-        '
-        Me.PictureBox16.BackgroundImage = CType(resources.GetObject("PictureBox16.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox16.Location = New System.Drawing.Point(618, 0)
-        Me.PictureBox16.Name = "PictureBox16"
-        Me.PictureBox16.Size = New System.Drawing.Size(51, 49)
-        Me.PictureBox16.TabIndex = 74
-        Me.PictureBox16.TabStop = False
-        Me.PictureBox16.Tag = "walls"
-        '
-        'PictureBox15
-        '
-        Me.PictureBox15.BackgroundImage = CType(resources.GetObject("PictureBox15.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox15.Location = New System.Drawing.Point(476, 0)
-        Me.PictureBox15.Name = "PictureBox15"
-        Me.PictureBox15.Size = New System.Drawing.Size(145, 49)
-        Me.PictureBox15.TabIndex = 73
-        Me.PictureBox15.TabStop = False
-        Me.PictureBox15.Tag = "walls"
-        '
-        'PictureBox14
-        '
-        Me.PictureBox14.BackgroundImage = CType(resources.GetObject("PictureBox14.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox14.Location = New System.Drawing.Point(427, 0)
-        Me.PictureBox14.Name = "PictureBox14"
-        Me.PictureBox14.Size = New System.Drawing.Size(51, 49)
-        Me.PictureBox14.TabIndex = 72
-        Me.PictureBox14.TabStop = False
-        Me.PictureBox14.Tag = "walls"
-        '
-        'PictureBox13
-        '
-        Me.PictureBox13.BackgroundImage = CType(resources.GetObject("PictureBox13.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox13.Location = New System.Drawing.Point(286, 0)
-        Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Size = New System.Drawing.Size(145, 49)
-        Me.PictureBox13.TabIndex = 71
-        Me.PictureBox13.TabStop = False
-        Me.PictureBox13.Tag = "walls"
-        '
-        'PictureBox12
-        '
-        Me.PictureBox12.BackgroundImage = CType(resources.GetObject("PictureBox12.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox12.Location = New System.Drawing.Point(145, 0)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(145, 49)
-        Me.PictureBox12.TabIndex = 70
-        Me.PictureBox12.TabStop = False
-        Me.PictureBox12.Tag = "walls"
-        '
-        'PictureBox11
-        '
-        Me.PictureBox11.BackgroundImage = CType(resources.GetObject("PictureBox11.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox11.Location = New System.Drawing.Point(95, 0)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(51, 49)
-        Me.PictureBox11.TabIndex = 69
-        Me.PictureBox11.TabStop = False
-        Me.PictureBox11.Tag = "walls"
         '
         'PictureBox10
         '
@@ -593,38 +499,337 @@ Partial Class Form4
         Me.PictureBox32.TabStop = False
         Me.PictureBox32.Tag = "walls2"
         '
-        'PictureBox34
-        '
-        Me.PictureBox34.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.PictureBox34.BackgroundImage = CType(resources.GetObject("PictureBox34.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox34.Location = New System.Drawing.Point(101, 335)
-        Me.PictureBox34.Name = "PictureBox34"
-        Me.PictureBox34.Size = New System.Drawing.Size(53, 49)
-        Me.PictureBox34.TabIndex = 98
-        Me.PictureBox34.TabStop = False
-        Me.PictureBox34.Tag = "walls2"
-        '
         'PictureBox35
         '
         Me.PictureBox35.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.PictureBox35.BackgroundImage = CType(resources.GetObject("PictureBox35.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox35.Location = New System.Drawing.Point(457, 96)
+        Me.PictureBox35.Location = New System.Drawing.Point(452, 135)
         Me.PictureBox35.Name = "PictureBox35"
-        Me.PictureBox35.Size = New System.Drawing.Size(80, 79)
+        Me.PictureBox35.Size = New System.Drawing.Size(80, 84)
         Me.PictureBox35.TabIndex = 99
         Me.PictureBox35.TabStop = False
         Me.PictureBox35.Tag = "walls2"
+        '
+        'star1
+        '
+        Me.star1.BackColor = System.Drawing.Color.Transparent
+        Me.star1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.star1.Image = CType(resources.GetObject("star1.Image"), System.Drawing.Image)
+        Me.star1.InitialImage = CType(resources.GetObject("star1.InitialImage"), System.Drawing.Image)
+        Me.star1.Location = New System.Drawing.Point(476, 85)
+        Me.star1.Name = "star1"
+        Me.star1.Size = New System.Drawing.Size(30, 28)
+        Me.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.star1.TabIndex = 100
+        Me.star1.TabStop = False
+        Me.star1.Tag = "stars"
+        Me.star1.UseWaitCursor = True
+        '
+        'PictureBox36
+        '
+        Me.PictureBox36.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox36.BackgroundImage = CType(resources.GetObject("PictureBox36.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox36.Location = New System.Drawing.Point(53, 536)
+        Me.PictureBox36.Name = "PictureBox36"
+        Me.PictureBox36.Size = New System.Drawing.Size(44, 40)
+        Me.PictureBox36.TabIndex = 101
+        Me.PictureBox36.TabStop = False
+        Me.PictureBox36.Tag = "spikes"
+        '
+        'star2
+        '
+        Me.star2.BackColor = System.Drawing.Color.Transparent
+        Me.star2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.star2.Image = CType(resources.GetObject("star2.Image"), System.Drawing.Image)
+        Me.star2.InitialImage = CType(resources.GetObject("star2.InitialImage"), System.Drawing.Image)
+        Me.star2.Location = New System.Drawing.Point(618, 96)
+        Me.star2.Name = "star2"
+        Me.star2.Size = New System.Drawing.Size(30, 28)
+        Me.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.star2.TabIndex = 106
+        Me.star2.TabStop = False
+        Me.star2.Tag = "stars"
+        Me.star2.UseWaitCursor = True
+        '
+        'PictureBox21
+        '
+        Me.PictureBox21.BackgroundImage = CType(resources.GetObject("PictureBox21.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox21.Location = New System.Drawing.Point(1057, 0)
+        Me.PictureBox21.Name = "PictureBox21"
+        Me.PictureBox21.Size = New System.Drawing.Size(145, 49)
+        Me.PictureBox21.TabIndex = 79
+        Me.PictureBox21.TabStop = False
+        Me.PictureBox21.Tag = "walls"
+        '
+        'PictureBox20
+        '
+        Me.PictureBox20.BackgroundImage = CType(resources.GetObject("PictureBox20.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox20.Location = New System.Drawing.Point(1007, 0)
+        Me.PictureBox20.Name = "PictureBox20"
+        Me.PictureBox20.Size = New System.Drawing.Size(51, 49)
+        Me.PictureBox20.TabIndex = 78
+        Me.PictureBox20.TabStop = False
+        Me.PictureBox20.Tag = "walls"
+        '
+        'PictureBox19
+        '
+        Me.PictureBox19.BackgroundImage = CType(resources.GetObject("PictureBox19.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox19.Location = New System.Drawing.Point(863, 0)
+        Me.PictureBox19.Name = "PictureBox19"
+        Me.PictureBox19.Size = New System.Drawing.Size(145, 49)
+        Me.PictureBox19.TabIndex = 77
+        Me.PictureBox19.TabStop = False
+        Me.PictureBox19.Tag = "walls"
+        '
+        'PictureBox18
+        '
+        Me.PictureBox18.BackgroundImage = CType(resources.GetObject("PictureBox18.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox18.Location = New System.Drawing.Point(719, 0)
+        Me.PictureBox18.Name = "PictureBox18"
+        Me.PictureBox18.Size = New System.Drawing.Size(145, 49)
+        Me.PictureBox18.TabIndex = 76
+        Me.PictureBox18.TabStop = False
+        Me.PictureBox18.Tag = "walls"
+        '
+        'PictureBox17
+        '
+        Me.PictureBox17.BackgroundImage = CType(resources.GetObject("PictureBox17.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox17.Location = New System.Drawing.Point(669, 0)
+        Me.PictureBox17.Name = "PictureBox17"
+        Me.PictureBox17.Size = New System.Drawing.Size(51, 49)
+        Me.PictureBox17.TabIndex = 75
+        Me.PictureBox17.TabStop = False
+        Me.PictureBox17.Tag = "walls"
+        '
+        'PictureBox16
+        '
+        Me.PictureBox16.BackgroundImage = CType(resources.GetObject("PictureBox16.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox16.Location = New System.Drawing.Point(618, 0)
+        Me.PictureBox16.Name = "PictureBox16"
+        Me.PictureBox16.Size = New System.Drawing.Size(51, 49)
+        Me.PictureBox16.TabIndex = 74
+        Me.PictureBox16.TabStop = False
+        Me.PictureBox16.Tag = "walls"
+        '
+        'PictureBox15
+        '
+        Me.PictureBox15.BackgroundImage = CType(resources.GetObject("PictureBox15.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox15.Location = New System.Drawing.Point(476, 0)
+        Me.PictureBox15.Name = "PictureBox15"
+        Me.PictureBox15.Size = New System.Drawing.Size(145, 49)
+        Me.PictureBox15.TabIndex = 73
+        Me.PictureBox15.TabStop = False
+        Me.PictureBox15.Tag = "walls"
+        '
+        'PictureBox14
+        '
+        Me.PictureBox14.BackgroundImage = CType(resources.GetObject("PictureBox14.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox14.Location = New System.Drawing.Point(426, 0)
+        Me.PictureBox14.Name = "PictureBox14"
+        Me.PictureBox14.Size = New System.Drawing.Size(54, 49)
+        Me.PictureBox14.TabIndex = 72
+        Me.PictureBox14.TabStop = False
+        Me.PictureBox14.Tag = "walls"
+        '
+        'PictureBox13
+        '
+        Me.PictureBox13.BackgroundImage = CType(resources.GetObject("PictureBox13.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox13.Location = New System.Drawing.Point(285, 0)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Size = New System.Drawing.Size(145, 49)
+        Me.PictureBox13.TabIndex = 71
+        Me.PictureBox13.TabStop = False
+        Me.PictureBox13.Tag = "walls"
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.BackgroundImage = CType(resources.GetObject("PictureBox12.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox12.Location = New System.Drawing.Point(145, 0)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(145, 49)
+        Me.PictureBox12.TabIndex = 70
+        Me.PictureBox12.TabStop = False
+        Me.PictureBox12.Tag = "walls"
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.BackgroundImage = CType(resources.GetObject("PictureBox11.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox11.Location = New System.Drawing.Point(95, 0)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(51, 49)
+        Me.PictureBox11.TabIndex = 69
+        Me.PictureBox11.TabStop = False
+        Me.PictureBox11.Tag = "walls"
+        '
+        'PictureBox37
+        '
+        Me.PictureBox37.BackgroundImage = CType(resources.GetObject("PictureBox37.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox37.Location = New System.Drawing.Point(528, 135)
+        Me.PictureBox37.Name = "PictureBox37"
+        Me.PictureBox37.Size = New System.Drawing.Size(51, 49)
+        Me.PictureBox37.TabIndex = 107
+        Me.PictureBox37.TabStop = False
+        Me.PictureBox37.Tag = "walls"
+        '
+        'PictureBox38
+        '
+        Me.PictureBox38.BackgroundImage = CType(resources.GetObject("PictureBox38.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox38.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox38.Location = New System.Drawing.Point(528, 184)
+        Me.PictureBox38.Name = "PictureBox38"
+        Me.PictureBox38.Size = New System.Drawing.Size(51, 49)
+        Me.PictureBox38.TabIndex = 108
+        Me.PictureBox38.TabStop = False
+        Me.PictureBox38.Tag = "walls"
+        '
+        'PictureBox39
+        '
+        Me.PictureBox39.BackgroundImage = CType(resources.GetObject("PictureBox39.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox39.Location = New System.Drawing.Point(528, 231)
+        Me.PictureBox39.Name = "PictureBox39"
+        Me.PictureBox39.Size = New System.Drawing.Size(51, 49)
+        Me.PictureBox39.TabIndex = 109
+        Me.PictureBox39.TabStop = False
+        Me.PictureBox39.Tag = "walls"
+        '
+        'PictureBox40
+        '
+        Me.PictureBox40.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.PictureBox40.BackgroundImage = CType(resources.GetObject("PictureBox40.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox40.Location = New System.Drawing.Point(528, 280)
+        Me.PictureBox40.Name = "PictureBox40"
+        Me.PictureBox40.Size = New System.Drawing.Size(51, 44)
+        Me.PictureBox40.TabIndex = 113
+        Me.PictureBox40.TabStop = False
+        Me.PictureBox40.Tag = "walls2"
+        '
+        'PictureBox43
+        '
+        Me.PictureBox43.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox43.Image = Global.MarioBros.My.Resources.Resources.blade
+        Me.PictureBox43.Location = New System.Drawing.Point(618, 330)
+        Me.PictureBox43.Name = "PictureBox43"
+        Me.PictureBox43.Size = New System.Drawing.Size(42, 36)
+        Me.PictureBox43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox43.TabIndex = 114
+        Me.PictureBox43.TabStop = False
+        Me.PictureBox43.Tag = "spikes"
+        '
+        'PictureBox44
+        '
+        Me.PictureBox44.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.PictureBox44.BackgroundImage = CType(resources.GetObject("PictureBox44.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox44.Location = New System.Drawing.Point(579, 280)
+        Me.PictureBox44.Name = "PictureBox44"
+        Me.PictureBox44.Size = New System.Drawing.Size(51, 44)
+        Me.PictureBox44.TabIndex = 115
+        Me.PictureBox44.TabStop = False
+        Me.PictureBox44.Tag = "walls2"
+        '
+        'PictureBox45
+        '
+        Me.PictureBox45.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.PictureBox45.BackgroundImage = CType(resources.GetObject("PictureBox45.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox45.Location = New System.Drawing.Point(681, 280)
+        Me.PictureBox45.Name = "PictureBox45"
+        Me.PictureBox45.Size = New System.Drawing.Size(51, 44)
+        Me.PictureBox45.TabIndex = 117
+        Me.PictureBox45.TabStop = False
+        Me.PictureBox45.Tag = "walls2"
+        '
+        'PictureBox46
+        '
+        Me.PictureBox46.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.PictureBox46.BackgroundImage = CType(resources.GetObject("PictureBox46.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox46.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox46.Location = New System.Drawing.Point(630, 280)
+        Me.PictureBox46.Name = "PictureBox46"
+        Me.PictureBox46.Size = New System.Drawing.Size(51, 44)
+        Me.PictureBox46.TabIndex = 116
+        Me.PictureBox46.TabStop = False
+        Me.PictureBox46.Tag = "walls2"
+        '
+        'PictureBox47
+        '
+        Me.PictureBox47.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox47.Image = Global.MarioBros.My.Resources.Resources.Bibi_sin_fondo__1_
+        Me.PictureBox47.Location = New System.Drawing.Point(585, 173)
+        Me.PictureBox47.Name = "PictureBox47"
+        Me.PictureBox47.Size = New System.Drawing.Size(75, 107)
+        Me.PictureBox47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox47.TabIndex = 118
+        Me.PictureBox47.TabStop = False
+        Me.PictureBox47.Tag = "spikes"
+        '
+        'PictureBox41
+        '
+        Me.PictureBox41.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.PictureBox41.BackgroundImage = CType(resources.GetObject("PictureBox41.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox41.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox41.Location = New System.Drawing.Point(528, 91)
+        Me.PictureBox41.Name = "PictureBox41"
+        Me.PictureBox41.Size = New System.Drawing.Size(51, 44)
+        Me.PictureBox41.TabIndex = 120
+        Me.PictureBox41.TabStop = False
+        Me.PictureBox41.Tag = "walls2"
+        '
+        'PictureBox42
+        '
+        Me.PictureBox42.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.PictureBox42.BackgroundImage = CType(resources.GetObject("PictureBox42.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox42.Location = New System.Drawing.Point(528, 48)
+        Me.PictureBox42.Name = "PictureBox42"
+        Me.PictureBox42.Size = New System.Drawing.Size(51, 44)
+        Me.PictureBox42.TabIndex = 121
+        Me.PictureBox42.TabStop = False
+        Me.PictureBox42.Tag = "walls2"
+        '
+        'BasicEnemy12
+        '
+        Me.BasicEnemy12.BackColor = System.Drawing.Color.Transparent
+        Me.BasicEnemy12.BackgroundImage = Global.MarioBros.My.Resources.Resources.b1
+        Me.BasicEnemy12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BasicEnemy12.Location = New System.Drawing.Point(811, 222)
+        Me.BasicEnemy12.MaxA = 122
+        Me.BasicEnemy12.MaxB = 250
+        Me.BasicEnemy12.MovingDirection = "vertical"
+        Me.BasicEnemy12.Name = "BasicEnemy12"
+        Me.BasicEnemy12.ReachedLimit = False
+        Me.BasicEnemy12.Size = New System.Drawing.Size(31, 31)
+        Me.BasicEnemy12.TabIndex = 119
+        Me.BasicEnemy12.TabStop = False
+        Me.BasicEnemy12.Tag = "walls"
+        Me.BasicEnemy12.TouchedPoint = Nothing
         '
         'BasicEnemy11
         '
         Me.BasicEnemy11.BackColor = System.Drawing.Color.Transparent
         Me.BasicEnemy11.BackgroundImage = Global.MarioBros.My.Resources.Resources.b1
         Me.BasicEnemy11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BasicEnemy11.Location = New System.Drawing.Point(299, 243)
+        Me.BasicEnemy11.Location = New System.Drawing.Point(259, 280)
         Me.BasicEnemy11.MaxA = 254
-        Me.BasicEnemy11.MaxB = 454
+        Me.BasicEnemy11.MaxB = 360
         Me.BasicEnemy11.MovingDirection = "horizontal"
         Me.BasicEnemy11.Name = "BasicEnemy11"
         Me.BasicEnemy11.ReachedLimit = False
@@ -634,21 +839,6 @@ Partial Class Form4
         Me.BasicEnemy11.Tag = "walls"
         Me.BasicEnemy11.TouchedPoint = Nothing
         '
-        'star1
-        '
-        Me.star1.BackColor = System.Drawing.Color.Transparent
-        Me.star1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.star1.Image = CType(resources.GetObject("star1.Image"), System.Drawing.Image)
-        Me.star1.InitialImage = CType(resources.GetObject("star1.InitialImage"), System.Drawing.Image)
-        Me.star1.Location = New System.Drawing.Point(481, 62)
-        Me.star1.Name = "star1"
-        Me.star1.Size = New System.Drawing.Size(30, 28)
-        Me.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.star1.TabIndex = 100
-        Me.star1.TabStop = False
-        Me.star1.Tag = "stars"
-        Me.star1.UseWaitCursor = True
-        '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -656,16 +846,28 @@ Partial Class Form4
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1260, 677)
+        Me.Controls.Add(Me.PictureBox42)
+        Me.Controls.Add(Me.PictureBox41)
+        Me.Controls.Add(Me.BasicEnemy12)
+        Me.Controls.Add(Me.PictureBox47)
+        Me.Controls.Add(Me.PictureBox45)
+        Me.Controls.Add(Me.PictureBox46)
+        Me.Controls.Add(Me.PictureBox44)
+        Me.Controls.Add(Me.PictureBox43)
+        Me.Controls.Add(Me.PictureBox40)
+        Me.Controls.Add(Me.PictureBox39)
+        Me.Controls.Add(Me.PictureBox38)
+        Me.Controls.Add(Me.PictureBox37)
+        Me.Controls.Add(Me.star2)
+        Me.Controls.Add(Me.PictureBox36)
         Me.Controls.Add(Me.star1)
         Me.Controls.Add(Me.PictureBox35)
-        Me.Controls.Add(Me.PictureBox34)
         Me.Controls.Add(Me.BasicEnemy11)
         Me.Controls.Add(Me.PictureBox32)
         Me.Controls.Add(Me.PictureBox33)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.door)
-        Me.Controls.Add(Me.door0)
         Me.Controls.Add(Me.PictureBox31)
         Me.Controls.Add(Me.PictureBox30)
         Me.Controls.Add(Me.PictureBox24)
@@ -700,6 +902,7 @@ Partial Class Form4
         Me.Controls.Add(Me.col2)
         Me.Controls.Add(Me.col)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.door0)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -722,17 +925,6 @@ Partial Class Form4
         CType(Me.PictureBox27, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox28, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox22, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
@@ -746,10 +938,34 @@ Partial Class Form4
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox33, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox34, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BasicEnemy11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.star1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.star2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox43, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox44, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox45, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox46, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox47, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BasicEnemy12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BasicEnemy11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -776,17 +992,6 @@ Partial Class Form4
     Friend WithEvents PictureBox27 As PictureBox
     Friend WithEvents PictureBox28 As PictureBox
     Friend WithEvents PictureBox22 As PictureBox
-    Friend WithEvents PictureBox21 As PictureBox
-    Friend WithEvents PictureBox20 As PictureBox
-    Friend WithEvents PictureBox19 As PictureBox
-    Friend WithEvents PictureBox18 As PictureBox
-    Friend WithEvents PictureBox17 As PictureBox
-    Friend WithEvents PictureBox16 As PictureBox
-    Friend WithEvents PictureBox15 As PictureBox
-    Friend WithEvents PictureBox14 As PictureBox
-    Friend WithEvents PictureBox13 As PictureBox
-    Friend WithEvents PictureBox12 As PictureBox
-    Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox8 As PictureBox
@@ -801,7 +1006,31 @@ Partial Class Form4
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox33 As PictureBox
     Friend WithEvents PictureBox32 As PictureBox
-    Friend WithEvents PictureBox34 As PictureBox
     Friend WithEvents PictureBox35 As PictureBox
     Friend WithEvents star1 As PictureBox
+    Friend WithEvents PictureBox36 As PictureBox
+    Friend WithEvents star2 As PictureBox
+    Friend WithEvents PictureBox21 As PictureBox
+    Friend WithEvents PictureBox20 As PictureBox
+    Friend WithEvents PictureBox19 As PictureBox
+    Friend WithEvents PictureBox18 As PictureBox
+    Friend WithEvents PictureBox17 As PictureBox
+    Friend WithEvents PictureBox16 As PictureBox
+    Friend WithEvents PictureBox15 As PictureBox
+    Friend WithEvents PictureBox14 As PictureBox
+    Friend WithEvents PictureBox13 As PictureBox
+    Friend WithEvents PictureBox12 As PictureBox
+    Friend WithEvents PictureBox11 As PictureBox
+    Friend WithEvents PictureBox37 As PictureBox
+    Friend WithEvents PictureBox38 As PictureBox
+    Friend WithEvents PictureBox39 As PictureBox
+    Friend WithEvents PictureBox40 As PictureBox
+    Friend WithEvents PictureBox43 As PictureBox
+    Friend WithEvents PictureBox44 As PictureBox
+    Friend WithEvents PictureBox45 As PictureBox
+    Friend WithEvents PictureBox46 As PictureBox
+    Friend WithEvents PictureBox47 As PictureBox
+    Friend WithEvents BasicEnemy12 As BasicEnemy1
+    Friend WithEvents PictureBox41 As PictureBox
+    Friend WithEvents PictureBox42 As PictureBox
 End Class

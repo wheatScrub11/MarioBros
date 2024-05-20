@@ -104,6 +104,7 @@
         If isJumping Then
             velocityY += gravity
             If isTouchingStickyWall Then
+                System.Console.WriteLine("sfdjsfdjklsfkl")
                 velocityY = 0
                 isJumping = False
                 timer_gravity.Start()
@@ -134,6 +135,8 @@
                     isJumping = False
 
                 ElseIf ceilingCollision.Tag = "walls" Then
+                    System.Console.WriteLine("----")
+                    System.Console.WriteLine("gggg")
                     velocityY = ceilingCollision.Location.Y
                 End If
 
@@ -714,6 +717,18 @@
     End Sub
 
     Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
+
+    End Sub
+
+    Private Sub PictureBox36_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PictureBox37_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PictureBox39_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class
