@@ -14,6 +14,7 @@
     Dim isTouchingLeft As Boolean = False
     Dim leftCollision As PictureBox
     Dim isTouchingStickyCeiling As Boolean = False
+    Dim isTouchinMovingPlatform As Boolean = False
 
     Dim isTouchingStickyWall As Boolean = False
 
@@ -513,18 +514,26 @@
                     End If
 
                 End If
+
+                If enemy.Tag = "walls" Then
+                    If col3.Bounds.IntersectsWith(enemy.Bounds) Then
+                        If enemy.ReachedLimit = False AndAlso enemy.MovingDirection = "horizontal" Then
+                            createCharacterAndItsHitboxes(New Size(pb1.Width, pb1.Height), New Point(pb1.Location.X - 1, pb1.Location.Y))
+                        ElseIf enemy.ReachedLimit = True AndAlso enemy.MovingDirection = "horizontal" Then
+                            createCharacterAndItsHitboxes(New Size(pb1.Width, pb1.Height), New Point(pb1.Location.X + 1, pb1.Location.Y))
+                        End If
+
+                        If enemy.ReachedLimit = False AndAlso enemy.MovingDirection = "vertical" Then
+                            movePlayerToPoint(pb1.Location.X, pb1.Location.Y - 1)
+                        ElseIf enemy.ReachedLimit = True AndAlso enemy.MovingDirection = "vertical" Then
+                            movePlayerToPoint(pb1.Location.X, pb1.Location.Y + 1)
+                        End If
+                    End If
+                End If
                 If enemy.Tag = "spikes" Then
                     Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(enemy)
                     If res IsNot Nothing AndAlso res.Item2.Name = "pb1" Then
                         movePlayerToSpawnPoint()
-                    End If
-                ElseIf enemy.Tag = "walls2" Or enemy.Tag = "walls" Then
-                    If col.Bounds.IntersectsWith(enemy.Bounds) Or col2.Bounds.IntersectsWith(enemy.Bounds) Or col3.Bounds.IntersectsWith(enemy.Bounds) Or col4.Bounds.IntersectsWith(enemy.Bounds) Then
-                        System.Console.WriteLine("jajsajsdajsda")
-                        checkLeftCollision()
-                        checkRightCollision()
-                        checkCeilingCollision()
-                        checkGroundCollision()
                     End If
                 End If
 
