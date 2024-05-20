@@ -1,4 +1,4 @@
-﻿Public Class Form3
+﻿Public Class Form4
     Dim velocityY As Double = 0
     Dim gravity As Double = 25.8
     Dim jumpSpeed As Double = -550
@@ -193,7 +193,7 @@
         Return False
     End Function
 
-    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         createCharacterAndItsHitboxes(New Size(30, 40), New Point(spawnX, spanwY))
 
 
@@ -205,7 +205,7 @@
     End Sub
 
 
-    Private Sub Form3_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+    Private Sub Form4_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
 
         Dim bHandled As Boolean = False
 
@@ -236,7 +236,7 @@
         End Select
     End Sub
 
-    Private Sub Form3_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
+    Private Sub Form4_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
         ' Sets Handled to true to prevent other controls from
         ' receiving the key if an arrow key was pressed
         Dim bHandled As Boolean = False
@@ -662,26 +662,5 @@
         Return False
 
     End Function
-
-    Private Sub pb1_LocationChanged(sender As Object, e As EventArgs) Handles pb1.LocationChanged
-        Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(pb1)
-
-        If res IsNot Nothing AndAlso res.Item2.Tag = "stars" Then
-            res.Item2.Location = New Point(res.Item2.Location.X + 5000, res.Item2.Location.Y + 5000)
-            starCount += 1
-            If starCount >= 3 Then
-
-                door.BackgroundImage = My.Resources.doorOpened
-                door.Location = New Point(1082, 467)
-
-            End If
-
-        ElseIf res IsNot Nothing AndAlso res.Item2.Name = "door" Then
-            Form4.Show()
-            Me.Close()
-        End If
-
-    End Sub
-
 
 End Class

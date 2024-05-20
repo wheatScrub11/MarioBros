@@ -30,7 +30,6 @@ Partial Class Form3
         Me.timer_jump = New System.Windows.Forms.Timer(Me.components)
         Me.basicenemy1timer = New System.Windows.Forms.Timer(Me.components)
         Me.basicbullet1timer = New System.Windows.Forms.Timer(Me.components)
-        Me.starscheck = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pb1 = New System.Windows.Forms.PictureBox()
         Me.col4 = New System.Windows.Forms.PictureBox()
@@ -43,7 +42,6 @@ Partial Class Form3
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
@@ -87,11 +85,12 @@ Partial Class Form3
         Me.PictureBox49 = New System.Windows.Forms.PictureBox()
         Me.PictureBox46 = New System.Windows.Forms.PictureBox()
         Me.PictureBox50 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox51 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox52 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox53 = New System.Windows.Forms.PictureBox()
+        Me.star1 = New System.Windows.Forms.PictureBox()
+        Me.star2 = New System.Windows.Forms.PictureBox()
+        Me.star3 = New System.Windows.Forms.PictureBox()
         Me.door0 = New System.Windows.Forms.PictureBox()
         Me.door = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,7 +102,6 @@ Partial Class Form3
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,11 +145,12 @@ Partial Class Form3
         CType(Me.PictureBox49, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox46, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox50, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox51, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox52, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.star1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.star2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.star3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.door0, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.door, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'timer_moveRight
@@ -177,11 +176,6 @@ Partial Class Form3
         'basicbullet1timer
         '
         Me.basicbullet1timer.Interval = 10
-        '
-        'starscheck
-        '
-        Me.starscheck.Enabled = True
-        Me.starscheck.Interval = 1
         '
         'Label1
         '
@@ -212,6 +206,7 @@ Partial Class Form3
         Me.col4.TabIndex = 27
         Me.col4.TabStop = False
         Me.col4.UseWaitCursor = True
+        Me.col4.Visible = False
         '
         'col3
         '
@@ -235,6 +230,7 @@ Partial Class Form3
         Me.col2.TabIndex = 25
         Me.col2.TabStop = False
         Me.col2.UseWaitCursor = True
+        Me.col2.Visible = False
         '
         'col
         '
@@ -246,6 +242,7 @@ Partial Class Form3
         Me.col.TabIndex = 24
         Me.col.TabStop = False
         Me.col.UseWaitCursor = True
+        Me.col.Visible = False
         '
         'PictureBox1
         '
@@ -313,17 +310,6 @@ Partial Class Form3
         Me.PictureBox6.TabIndex = 34
         Me.PictureBox6.TabStop = False
         Me.PictureBox6.Tag = "walls"
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.BackgroundImage = CType(resources.GetObject("PictureBox8.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox8.Location = New System.Drawing.Point(0, 100)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(51, 99)
-        Me.PictureBox8.TabIndex = 36
-        Me.PictureBox8.TabStop = False
-        Me.PictureBox8.Tag = "walls"
         '
         'PictureBox9
         '
@@ -744,9 +730,9 @@ Partial Class Form3
         '
         Me.PictureBox47.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox47.Location = New System.Drawing.Point(880, 449)
+        Me.PictureBox47.Location = New System.Drawing.Point(877, 449)
         Me.PictureBox47.Name = "PictureBox47"
-        Me.PictureBox47.Size = New System.Drawing.Size(13, 29)
+        Me.PictureBox47.Size = New System.Drawing.Size(20, 29)
         Me.PictureBox47.TabIndex = 77
         Me.PictureBox47.TabStop = False
         Me.PictureBox47.Tag = "spikes"
@@ -758,7 +744,7 @@ Partial Class Form3
         Me.PictureBox48.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox48.Location = New System.Drawing.Point(871, 449)
         Me.PictureBox48.Name = "PictureBox48"
-        Me.PictureBox48.Size = New System.Drawing.Size(29, 29)
+        Me.PictureBox48.Size = New System.Drawing.Size(32, 29)
         Me.PictureBox48.TabIndex = 78
         Me.PictureBox48.TabStop = False
         Me.PictureBox48.Tag = "spike"
@@ -807,50 +793,50 @@ Partial Class Form3
         Me.PictureBox50.TabStop = False
         Me.PictureBox50.Tag = "walls"
         '
-        'PictureBox51
+        'star1
         '
-        Me.PictureBox51.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox51.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox51.Image = CType(resources.GetObject("PictureBox51.Image"), System.Drawing.Image)
-        Me.PictureBox51.InitialImage = CType(resources.GetObject("PictureBox51.InitialImage"), System.Drawing.Image)
-        Me.PictureBox51.Location = New System.Drawing.Point(477, 506)
-        Me.PictureBox51.Name = "PictureBox51"
-        Me.PictureBox51.Size = New System.Drawing.Size(30, 28)
-        Me.PictureBox51.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox51.TabIndex = 84
-        Me.PictureBox51.TabStop = False
-        Me.PictureBox51.Tag = "stars"
-        Me.PictureBox51.UseWaitCursor = True
+        Me.star1.BackColor = System.Drawing.Color.Transparent
+        Me.star1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.star1.Image = CType(resources.GetObject("star1.Image"), System.Drawing.Image)
+        Me.star1.InitialImage = CType(resources.GetObject("star1.InitialImage"), System.Drawing.Image)
+        Me.star1.Location = New System.Drawing.Point(477, 506)
+        Me.star1.Name = "star1"
+        Me.star1.Size = New System.Drawing.Size(30, 28)
+        Me.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.star1.TabIndex = 84
+        Me.star1.TabStop = False
+        Me.star1.Tag = "stars"
+        Me.star1.UseWaitCursor = True
         '
-        'PictureBox52
+        'star2
         '
-        Me.PictureBox52.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox52.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox52.Image = CType(resources.GetObject("PictureBox52.Image"), System.Drawing.Image)
-        Me.PictureBox52.InitialImage = CType(resources.GetObject("PictureBox52.InitialImage"), System.Drawing.Image)
-        Me.PictureBox52.Location = New System.Drawing.Point(578, 289)
-        Me.PictureBox52.Name = "PictureBox52"
-        Me.PictureBox52.Size = New System.Drawing.Size(30, 28)
-        Me.PictureBox52.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox52.TabIndex = 85
-        Me.PictureBox52.TabStop = False
-        Me.PictureBox52.Tag = "stars"
-        Me.PictureBox52.UseWaitCursor = True
+        Me.star2.BackColor = System.Drawing.Color.Transparent
+        Me.star2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.star2.Image = CType(resources.GetObject("star2.Image"), System.Drawing.Image)
+        Me.star2.InitialImage = CType(resources.GetObject("star2.InitialImage"), System.Drawing.Image)
+        Me.star2.Location = New System.Drawing.Point(578, 289)
+        Me.star2.Name = "star2"
+        Me.star2.Size = New System.Drawing.Size(30, 28)
+        Me.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.star2.TabIndex = 85
+        Me.star2.TabStop = False
+        Me.star2.Tag = "stars"
+        Me.star2.UseWaitCursor = True
         '
-        'PictureBox53
+        'star3
         '
-        Me.PictureBox53.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox53.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox53.Image = CType(resources.GetObject("PictureBox53.Image"), System.Drawing.Image)
-        Me.PictureBox53.InitialImage = CType(resources.GetObject("PictureBox53.InitialImage"), System.Drawing.Image)
-        Me.PictureBox53.Location = New System.Drawing.Point(979, 344)
-        Me.PictureBox53.Name = "PictureBox53"
-        Me.PictureBox53.Size = New System.Drawing.Size(30, 28)
-        Me.PictureBox53.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox53.TabIndex = 86
-        Me.PictureBox53.TabStop = False
-        Me.PictureBox53.Tag = "stars"
-        Me.PictureBox53.UseWaitCursor = True
+        Me.star3.BackColor = System.Drawing.Color.Transparent
+        Me.star3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.star3.Image = CType(resources.GetObject("star3.Image"), System.Drawing.Image)
+        Me.star3.InitialImage = CType(resources.GetObject("star3.InitialImage"), System.Drawing.Image)
+        Me.star3.Location = New System.Drawing.Point(979, 344)
+        Me.star3.Name = "star3"
+        Me.star3.Size = New System.Drawing.Size(30, 28)
+        Me.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.star3.TabIndex = 86
+        Me.star3.TabStop = False
+        Me.star3.Tag = "stars"
+        Me.star3.UseWaitCursor = True
         '
         'door0
         '
@@ -875,17 +861,28 @@ Partial Class Form3
         Me.door.TabStop = False
         Me.door.Tag = ""
         '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackgroundImage = CType(resources.GetObject("PictureBox8.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox8.Location = New System.Drawing.Point(0, 100)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(51, 99)
+        Me.PictureBox8.TabIndex = 36
+        Me.PictureBox8.TabStop = False
+        Me.PictureBox8.Tag = "walls"
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.ClientSize = New System.Drawing.Size(1260, 677)
         Me.Controls.Add(Me.door)
-        Me.Controls.Add(Me.PictureBox53)
-        Me.Controls.Add(Me.PictureBox52)
-        Me.Controls.Add(Me.PictureBox51)
+        Me.Controls.Add(Me.star3)
+        Me.Controls.Add(Me.star2)
+        Me.Controls.Add(Me.star1)
         Me.Controls.Add(Me.PictureBox50)
         Me.Controls.Add(Me.PictureBox46)
         Me.Controls.Add(Me.PictureBox49)
@@ -945,9 +942,12 @@ Partial Class Form3
         Me.Controls.Add(Me.door0)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Form3"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Text = "Form3"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Not Mario Bros"
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.col4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.col3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -959,7 +959,6 @@ Partial Class Form3
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1003,11 +1002,12 @@ Partial Class Form3
         CType(Me.PictureBox49, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox46, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox50, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox51, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox52, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.star1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.star2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.star3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.door0, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.door, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1024,7 +1024,6 @@ Partial Class Form3
     Friend WithEvents timer_jump As Timer
     Friend WithEvents basicenemy1timer As Timer
     Friend WithEvents basicbullet1timer As Timer
-    Friend WithEvents starscheck As Timer
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox2 As PictureBox
@@ -1032,7 +1031,6 @@ Partial Class Form3
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox11 As PictureBox
@@ -1076,9 +1074,10 @@ Partial Class Form3
     Friend WithEvents PictureBox49 As PictureBox
     Friend WithEvents PictureBox46 As PictureBox
     Friend WithEvents PictureBox50 As PictureBox
-    Friend WithEvents PictureBox51 As PictureBox
-    Friend WithEvents PictureBox52 As PictureBox
-    Friend WithEvents PictureBox53 As PictureBox
+    Friend WithEvents star1 As PictureBox
+    Friend WithEvents star2 As PictureBox
+    Friend WithEvents star3 As PictureBox
     Friend WithEvents door0 As PictureBox
     Friend WithEvents door As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
 End Class

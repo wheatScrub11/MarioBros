@@ -293,7 +293,7 @@ Partial Class Form1
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.PictureBox3.Location = New System.Drawing.Point(-16, 205)
+        Me.PictureBox3.Location = New System.Drawing.Point(-16, 195)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(148, 23)
         Me.PictureBox3.TabIndex = 51
@@ -347,7 +347,7 @@ Partial Class Form1
         'PictureBox13
         '
         Me.PictureBox13.BackColor = System.Drawing.Color.Magenta
-        Me.PictureBox13.Location = New System.Drawing.Point(0, 218)
+        Me.PictureBox13.Location = New System.Drawing.Point(0, 208)
         Me.PictureBox13.Name = "PictureBox13"
         Me.PictureBox13.Size = New System.Drawing.Size(132, 225)
         Me.PictureBox13.TabIndex = 56
@@ -400,7 +400,7 @@ Partial Class Form1
         Me.KeyPreview = True
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "9"
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.col, System.ComponentModel.ISupportInitialize).EndInit()

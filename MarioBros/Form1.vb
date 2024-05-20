@@ -139,7 +139,7 @@ Public Class Form1
             col4.Location = New Point(col4.Location.X, col4.Location.Y + velocityY * 0.02)
 
             If isTouchingGround Then
-                If groundCollision.Tag = "walls" Then
+                If groundCollision.Tag = "walls" Or groundCollision.Tag = "walls2" Then
                     yAxeGroundPosition = groundCollision.Location.Y
                 ElseIf groundCollision.Tag = "spikes" Then
                     movePlayerToSpawnPoint()
@@ -190,17 +190,26 @@ Public Class Form1
             ' la caída incrementa cada 5, pero si en algun momento la posicion del jugador + 5 es mayor a
             ' la de la altura del suelo pues lo traspasa. Este cálculo arregla eso para que en vez de ser 5,
             ' sea la distancia menor posible
-            Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col3)
-            If res IsNot Nothing Then
-                System.Console.WriteLine(res.Item2.Tag)
+
+            If isTouchingGround Then
+                If groundCollision.Tag = "spikes" Then
+                    movePlayerToSpawnPoint()
+                ElseIf groundCollision.Tag = "walls" Or groundCollision.Tag = "walls2" Then
+                    incrementalFallingValue = groundCollision.Location.Y - (pb1.Location.Y + pb1.Height)
+                End If
             End If
 
-            If res IsNot Nothing AndAlso res.Item2.Tag = "spikes" Then
-                movePlayerToSpawnPoint()
-            ElseIf res IsNot Nothing AndAlso res.Item2.Tag = "walls" Then
-                incrementalFallingValue = res.Item2.Location.Y - (pb1.Location.Y + pb1.Height)
+            'Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col3)
+            'If res IsNot Nothing Then
+            '    System.Console.WriteLine(res.Item2.Tag)
+            'End If
 
-            End If
+            'If res IsNot Nothing AndAlso res.Item2.Tag = "spikes" Then
+            '    movePlayerToSpawnPoint()
+            'ElseIf res IsNot Nothing AndAlso res.Item2.Tag = "walls" Then
+            '    incrementalFallingValue = res.Item2.Location.Y - (pb1.Location.Y + pb1.Height)
+
+            'End If
 
             If isTouchingStickyWall Then
                 incrementalFallingValue = 0.9
