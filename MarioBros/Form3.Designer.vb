@@ -91,6 +91,7 @@ Partial Class Form3
         Me.door0 = New System.Windows.Forms.PictureBox()
         Me.door = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox51 = New System.Windows.Forms.PictureBox()
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -151,6 +152,7 @@ Partial Class Form3
         CType(Me.door0, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.door, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox51, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'timer_moveRight
@@ -872,6 +874,17 @@ Partial Class Form3
         Me.PictureBox8.TabStop = False
         Me.PictureBox8.Tag = "walls"
         '
+        'PictureBox51
+        '
+        Me.PictureBox51.BackgroundImage = CType(resources.GetObject("PictureBox51.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox51.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox51.Location = New System.Drawing.Point(259, 410)
+        Me.PictureBox51.Name = "PictureBox51"
+        Me.PictureBox51.Size = New System.Drawing.Size(44, 40)
+        Me.PictureBox51.TabIndex = 89
+        Me.PictureBox51.TabStop = False
+        Me.PictureBox51.Tag = "walls2"
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -879,6 +892,7 @@ Partial Class Form3
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1260, 677)
+        Me.Controls.Add(Me.PictureBox51)
         Me.Controls.Add(Me.door)
         Me.Controls.Add(Me.star3)
         Me.Controls.Add(Me.star2)
@@ -1008,6 +1022,7 @@ Partial Class Form3
         CType(Me.door0, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.door, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox51, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1080,4 +1095,5 @@ Partial Class Form3
     Friend WithEvents door0 As PictureBox
     Friend WithEvents door As PictureBox
     Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents PictureBox51 As PictureBox
 End Class

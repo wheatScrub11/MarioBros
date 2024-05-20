@@ -51,6 +51,8 @@
     Private bullet3 As New BasicBullet1
 
 
+
+
     Public Function setBasicBullet1Properties(obj As BasicBullet1, count As Integer, size As Size, location As Point, bulletDirection As String) As Boolean
         Dim objName As String = "basicBullet" & count
         obj.bulletDirection = bulletDirection
@@ -71,7 +73,7 @@
 
     End Function
 
-    Public Function setBasicEnemy1Properties(obj As BasicEnemy1, count As Integer, size As Size, location As Point, ma As Integer, mb As Integer, movingD As String) As Boolean
+    Public Function setBasicEnemy1Properties(obj As BasicEnemy1, count As Integer, size As Size, location As Point, ma As Integer, mb As Integer, movingD As String, tg As String, img As Image) As Boolean
         Dim objName As String = "basicEnemy" & count
 
 
@@ -81,10 +83,10 @@
         obj.ReachedLimit = False
         obj.Size = New Size(size.Width, size.Height)
         obj.Location = New Point(location.X, location.Y - obj.Height)
-        obj.Image = beeIdle
+        obj.Image = img
         obj.SizeMode = PictureBoxSizeMode.StretchImage
         obj.Name = objName
-        obj.Tag = "spikes"
+        obj.Tag = tg
         obj.BackColor = Color.Transparent
 
 
@@ -112,7 +114,7 @@
             col4.Location = New Point(col4.Location.X, col4.Location.Y + velocityY * 0.02)
 
             If isTouchingGround Then
-                If groundCollision.Tag = "walls" Then
+                If groundCollision.Tag = "walls" Or groundCollision.Tag = "walls2" Then
                     yAxeGroundPosition = groundCollision.Location.Y
                 ElseIf groundCollision.Tag = "spikes" Then
                     movePlayerToSpawnPoint()
@@ -195,7 +197,7 @@
 
     Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         createCharacterAndItsHitboxes(New Size(30, 40), New Point(spawnX, spanwY))
-
+        'setBasicEnemy1Properties(enemy1, 1, New Size(50, 50), New Point(200, 300), 100, 300, "horizontal", "walls", My.Resources.Undertale)
 
         'ResizeAllControls(Me)
         pb1.Image = sansidle
@@ -413,6 +415,8 @@
             isTouchingRight = True
             rightCollision = res.Item2
         Else
+            isTouchingStickyWall = False
+
             isTouchingRight = False
             rightCollision = Nothing
         End If
@@ -425,6 +429,7 @@
             isTouchingLeft = True
             leftCollision = res.Item2
         Else
+            isTouchingStickyWall = False
             isTouchingLeft = False
             leftCollision = Nothing
         End If
@@ -434,7 +439,7 @@
     Public Function checkGroundCollision() As Boolean
         Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col3)
 
-        If res IsNot Nothing AndAlso res.Item1 = True AndAlso (res.Item2.Tag = "walls" Or res.Item2.Tag = "spikes") Then
+        If res IsNot Nothing AndAlso res.Item1 = True AndAlso (res.Item2.Tag = "walls" Or res.Item2.Tag = "spikes" Or res.Item2.Tag = "walls2") Then
             isTouchingGround = True
             groundCollision = res.Item2
         Else
@@ -471,13 +476,13 @@
         applyGravity()
     End Sub
 
-    'Private Sub col_LocationChanged(sender As Object, e As EventArgs) Handles col.LocationChanged
-    '    checkRightCollision()
-    'End Sub
+    Private Sub col_LocationChanged(sender As Object, e As EventArgs) Handles col.LocationChanged
+        checkRightCollision()
+    End Sub
 
-    'Private Sub col2_LocationChanged(sender As Object, e As EventArgs) Handles col2.LocationChanged
-    '    checkLeftCollision()
-    'End Sub
+    Private Sub col2_LocationChanged(sender As Object, e As EventArgs) Handles col2.LocationChanged
+        checkLeftCollision()
+    End Sub
 
     Private Sub col3_LocationChanged(sender As Object, e As EventArgs) Handles col3.LocationChanged
         checkGroundCollision()
@@ -508,10 +513,19 @@
                     End If
 
                 End If
-
-                Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(enemy)
-                If res IsNot Nothing AndAlso res.Item2.Name = "pb1" Then
-                    movePlayerToSpawnPoint()
+                If enemy.Tag = "spikes" Then
+                    Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(enemy)
+                    If res IsNot Nothing AndAlso res.Item2.Name = "pb1" Then
+                        movePlayerToSpawnPoint()
+                    End If
+                ElseIf enemy.Tag = "walls2" Or enemy.Tag = "walls" Then
+                    If col.Bounds.IntersectsWith(enemy.Bounds) Or col2.Bounds.IntersectsWith(enemy.Bounds) Or col3.Bounds.IntersectsWith(enemy.Bounds) Or col4.Bounds.IntersectsWith(enemy.Bounds) Then
+                        System.Console.WriteLine("jajsajsdajsda")
+                        checkLeftCollision()
+                        checkRightCollision()
+                        checkCeilingCollision()
+                        checkGroundCollision()
+                    End If
                 End If
 
                 If enemy.MovingDirection = "horizontal" Then
@@ -576,7 +590,7 @@
         Dim collisionMatch As PictureBox = New PictureBox
 
         For Each ctrl In Me.Controls
-            If TypeOf ctrl Is PictureBox AndAlso (ctrl.Tag = "walls" Or ctrl.Tag = "spikes" Or ctrl.tag = "walls2" Or ctrl.Name = "pb1" Or ctrl.tag = "stars" Or ctrl.name = "door") Then
+            If TypeOf ctrl Is PictureBox AndAlso (ctrl.Tag = "walls" Or ctrl.Tag = "spikes" Or ctrl.Tag = "walls2" Or ctrl.Name = "pb1" Or ctrl.tag = "stars" Or ctrl.name = "door") Then
                 Dim wall As PictureBox = DirectCast(ctrl, PictureBox)
 
                 If collider.Bounds.IntersectsWith(wall.Bounds) Then
@@ -663,7 +677,29 @@
 
     End Function
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub pb1_LocationChanged(sender As Object, e As EventArgs) Handles pb1.LocationChanged
+        Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(pb1)
+
+        If res IsNot Nothing AndAlso res.Item2.Tag = "stars" Then
+            res.Item2.Location = New Point(res.Item2.Location.X + 5000, res.Item2.Location.Y + 5000)
+            starCount += 1
+            If starCount >= 3 Then
+
+                door.BackgroundImage = My.Resources.doorOpened
+                door.Location = New Point(1082, 467)
+
+            End If
+
+        ElseIf res IsNot Nothing AndAlso res.Item2.Name = "door" Then
+            'Form4.Show()
+            Me.Close()
+        End If
 
     End Sub
+
+    Private Sub PictureBox51_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+
 End Class

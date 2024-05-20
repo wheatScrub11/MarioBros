@@ -112,7 +112,7 @@
             col4.Location = New Point(col4.Location.X, col4.Location.Y + velocityY * 0.02)
 
             If isTouchingGround Then
-                If groundCollision.Tag = "walls" Then
+                If groundCollision.Tag = "walls" Or groundCollision.Tag = "walls2" Then
                     yAxeGroundPosition = groundCollision.Location.Y
                 ElseIf groundCollision.Tag = "spikes" Then
                     movePlayerToSpawnPoint()
@@ -413,6 +413,8 @@
             isTouchingRight = True
             rightCollision = res.Item2
         Else
+            isTouchingStickyWall = False
+
             isTouchingRight = False
             rightCollision = Nothing
         End If
@@ -425,6 +427,7 @@
             isTouchingLeft = True
             leftCollision = res.Item2
         Else
+            isTouchingStickyWall = False
             isTouchingLeft = False
             leftCollision = Nothing
         End If
@@ -434,7 +437,7 @@
     Public Function checkGroundCollision() As Boolean
         Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col3)
 
-        If res IsNot Nothing AndAlso res.Item1 = True AndAlso (res.Item2.Tag = "walls" Or res.Item2.Tag = "spikes") Then
+        If res IsNot Nothing AndAlso res.Item1 = True AndAlso (res.Item2.Tag = "walls" Or res.Item2.Tag = "spikes" Or res.Item2.Tag = "walls2") Then
             isTouchingGround = True
             groundCollision = res.Item2
         Else
@@ -471,13 +474,13 @@
         applyGravity()
     End Sub
 
-    'Private Sub col_LocationChanged(sender As Object, e As EventArgs) Handles col.LocationChanged
-    '    checkRightCollision()
-    'End Sub
+    Private Sub col_LocationChanged(sender As Object, e As EventArgs) Handles col.LocationChanged
+        checkRightCollision()
+    End Sub
 
-    'Private Sub col2_LocationChanged(sender As Object, e As EventArgs) Handles col2.LocationChanged
-    '    checkLeftCollision()
-    'End Sub
+    Private Sub col2_LocationChanged(sender As Object, e As EventArgs) Handles col2.LocationChanged
+        checkLeftCollision()
+    End Sub
 
     Private Sub col3_LocationChanged(sender As Object, e As EventArgs) Handles col3.LocationChanged
         checkGroundCollision()
@@ -576,7 +579,7 @@
         Dim collisionMatch As PictureBox = New PictureBox
 
         For Each ctrl In Me.Controls
-            If TypeOf ctrl Is PictureBox AndAlso (ctrl.Tag = "walls" Or ctrl.Tag = "spikes" Or ctrl.tag = "walls2" Or ctrl.Name = "pb1" Or ctrl.tag = "stars" Or ctrl.name = "door") Then
+            If TypeOf ctrl Is PictureBox AndAlso (ctrl.Tag = "walls" Or ctrl.Tag = "spikes" Or ctrl.Tag = "walls2" Or ctrl.Name = "pb1" Or ctrl.tag = "stars" Or ctrl.name = "door") Then
                 Dim wall As PictureBox = DirectCast(ctrl, PictureBox)
 
                 If collider.Bounds.IntersectsWith(wall.Bounds) Then
