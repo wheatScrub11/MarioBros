@@ -81,6 +81,9 @@
     <Compile Include="BasicEnemy1.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BasicMovingPlatform1.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Undertale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
