@@ -171,7 +171,7 @@
 
             If res IsNot Nothing AndAlso res.Item2.Tag = "spikes" Then
                 movePlayerToSpawnPoint()
-            ElseIf res IsNot Nothing AndAlso res.Item2.Tag = "walls" Then
+            ElseIf res IsNot Nothing AndAlso (res.Item2.Tag = "walls" Or res.Item2.Tag = "walls2") Then
                 incrementalFallingValue = res.Item2.Location.Y - (pb1.Location.Y + pb1.Height)
 
             End If
@@ -710,5 +710,7 @@
 
     End Sub
 
+    Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
 
+    End Sub
 End Class
