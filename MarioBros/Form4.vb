@@ -458,8 +458,11 @@
         If res IsNot Nothing AndAlso res.Item1 = True Then
             isTouchingCeiling = True
             ceilingCollision = res.Item2
+            If res.Item2.Tag = "walls" Or res.Item2.Tag = "walls2" Then
+                velocityY = ceilingCollision.Location.Y
 
-            'velocityY = ceilingCollision.Location.Y
+            End If
+
         Else
             '' if i move to the left or right when im sticked to a ceiling and then i stopped touching the ceiling, i will drop
             If timer_gravity.Enabled = False AndAlso isTouchingStickyCeiling = True Then

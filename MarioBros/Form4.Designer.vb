@@ -73,6 +73,7 @@ Partial Class Form4
         Me.PictureBox34 = New System.Windows.Forms.PictureBox()
         Me.PictureBox35 = New System.Windows.Forms.PictureBox()
         Me.BasicEnemy11 = New MarioBros.BasicEnemy1()
+        Me.star1 = New System.Windows.Forms.PictureBox()
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,6 +117,7 @@ Partial Class Form4
         CType(Me.PictureBox34, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BasicEnemy11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.star1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pb1
@@ -608,9 +610,9 @@ Partial Class Form4
         Me.PictureBox35.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.PictureBox35.BackgroundImage = CType(resources.GetObject("PictureBox35.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox35.Location = New System.Drawing.Point(437, 46)
+        Me.PictureBox35.Location = New System.Drawing.Point(457, 96)
         Me.PictureBox35.Name = "PictureBox35"
-        Me.PictureBox35.Size = New System.Drawing.Size(113, 120)
+        Me.PictureBox35.Size = New System.Drawing.Size(80, 79)
         Me.PictureBox35.TabIndex = 99
         Me.PictureBox35.TabStop = False
         Me.PictureBox35.Tag = "walls2"
@@ -632,6 +634,21 @@ Partial Class Form4
         Me.BasicEnemy11.Tag = "walls"
         Me.BasicEnemy11.TouchedPoint = Nothing
         '
+        'star1
+        '
+        Me.star1.BackColor = System.Drawing.Color.Transparent
+        Me.star1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.star1.Image = CType(resources.GetObject("star1.Image"), System.Drawing.Image)
+        Me.star1.InitialImage = CType(resources.GetObject("star1.InitialImage"), System.Drawing.Image)
+        Me.star1.Location = New System.Drawing.Point(481, 62)
+        Me.star1.Name = "star1"
+        Me.star1.Size = New System.Drawing.Size(30, 28)
+        Me.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.star1.TabIndex = 100
+        Me.star1.TabStop = False
+        Me.star1.Tag = "stars"
+        Me.star1.UseWaitCursor = True
+        '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -639,6 +656,7 @@ Partial Class Form4
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1260, 677)
+        Me.Controls.Add(Me.star1)
         Me.Controls.Add(Me.PictureBox35)
         Me.Controls.Add(Me.PictureBox34)
         Me.Controls.Add(Me.BasicEnemy11)
@@ -731,6 +749,7 @@ Partial Class Form4
         CType(Me.PictureBox34, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BasicEnemy11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.star1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -784,4 +803,5 @@ Partial Class Form4
     Friend WithEvents PictureBox32 As PictureBox
     Friend WithEvents PictureBox34 As PictureBox
     Friend WithEvents PictureBox35 As PictureBox
+    Friend WithEvents star1 As PictureBox
 End Class
