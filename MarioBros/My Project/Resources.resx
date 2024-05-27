@@ -148,6 +148,18 @@
   <data name="Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="boton_hardcore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton_hardcore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boton_Inicio_historia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Boton_Inicio_historia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boton_Salir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton_Salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boton_verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton_verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Brown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Brown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -162,6 +174,15 @@
   </data>
   <data name="doorOpened" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\doorOpened.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="empty_speech_bubble_pixel_art_600nw_2199782829_Photoroom_png_Photoroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empty-speech-bubble-pixel-art-600nw-2199782829-Photoroom.png-Photoroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fondo_juego" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo_juego.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fondo_juego_arr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo_juego_arr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="git" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\git.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -192,6 +213,9 @@
   </data>
   <data name="portal_inicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\portal_inicio.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Portería_2__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Portería 2 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Purple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Purple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
