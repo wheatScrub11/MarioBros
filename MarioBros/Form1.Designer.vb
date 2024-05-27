@@ -33,10 +33,13 @@ Partial Class Form1
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Black
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Default
         Me.PictureBox1.Image = Global.MarioBros.My.Resources.Resources.portal_inicio
         Me.PictureBox1.Location = New System.Drawing.Point(390, 95)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(468, 511)
+        Me.PictureBox1.Size = New System.Drawing.Size(574, 493)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -49,6 +52,7 @@ Partial Class Form1
         '
         'Timer_inicio
         '
+        Me.Timer_inicio.Enabled = True
         '
         'personaje_inicio
         '
