@@ -385,5 +385,23 @@
   <ItemGroup>
     <None Include="Resources\Fondo_juego_arr.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton_Inicio_historia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton_verde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton_Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton_hardcore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Portería 2 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty-speech-bubble-pixel-art-600nw-2199782829-Photoroom.png-Photoroom.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
