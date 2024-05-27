@@ -1,4 +1,4 @@
-Public Class Tuto111
+Public Class Tuto22
   Dim velocityY As Double = 0
   Dim gravity As Double = 25.8
   Dim jumpSpeed As Double = -550
@@ -34,7 +34,7 @@ Public Class Tuto111
   Public Property scalorX As Double
   Public Property scalorY As Double
   Dim spawnX As Integer = 133
-  Dim spanwY As Integer = 401
+  Dim spanwY As Integer = 501
 
   'Sprites
 
@@ -850,8 +850,8 @@ Public Class Tuto111
   End Function
 
   Public Function moveToNextLvl() As Boolean
-    SaveData.levelsInfo(2) = New SaveData.Level("1.1.1", 111, True, My.Resources._111preview, deathc, timec)
-    Tuto2.Show()
+    SaveData.levelsInfo(4) = New SaveData.Level("2.2", 22, True, My.Resources._2preview, deathc, timec)
+    Form4.Show()
     Me.Close()
   End Function
 
@@ -866,5 +866,4 @@ Public Class Tuto111
     timec = Math.Round(timec + 0.1, 2)
     timeCount.Text = timec & "s"
   End Sub
-
 End Class

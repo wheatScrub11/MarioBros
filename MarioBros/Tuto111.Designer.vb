@@ -43,7 +43,6 @@ Partial Class Tuto111
         Me.PictureBox36 = New System.Windows.Forms.PictureBox()
         Me.PictureBox32 = New System.Windows.Forms.PictureBox()
         Me.PictureBox53 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox39 = New System.Windows.Forms.PictureBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.PictureBox40 = New System.Windows.Forms.PictureBox()
         Me.PictureBox38 = New System.Windows.Forms.PictureBox()
@@ -72,14 +71,16 @@ Partial Class Tuto111
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.BasicEnemy14 = New MarioBros.BasicEnemy1()
-        Me.BasicEnemy13 = New MarioBros.BasicEnemy1()
-        Me.BasicEnemy12 = New MarioBros.BasicEnemy1()
-        Me.BasicEnemy11 = New MarioBros.BasicEnemy1()
         Me.timeCount = New System.Windows.Forms.Label()
         Me.pausebtn = New System.Windows.Forms.PictureBox()
         Me.deathCount = New System.Windows.Forms.Label()
         Me.timeTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox39 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.BasicEnemy14 = New MarioBros.BasicEnemy1()
+        Me.BasicEnemy13 = New MarioBros.BasicEnemy1()
+        Me.BasicEnemy12 = New MarioBros.BasicEnemy1()
+        Me.BasicEnemy11 = New MarioBros.BasicEnemy1()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.col4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,7 +94,6 @@ Partial Class Tuto111
         CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,11 +122,13 @@ Partial Class Tuto111
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pausebtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BasicEnemy14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BasicEnemy13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BasicEnemy12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BasicEnemy11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pausebtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'timer_moveRight
@@ -314,18 +316,6 @@ Partial Class Tuto111
         Me.PictureBox53.TabStop = False
         Me.PictureBox53.Tag = "walls"
         '
-        'PictureBox39
-        '
-        Me.PictureBox39.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox39.BackgroundImage = Global.MarioBros.My.Resources.Resources.multispike
-        Me.PictureBox39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox39.Location = New System.Drawing.Point(512, 389)
-        Me.PictureBox39.Name = "PictureBox39"
-        Me.PictureBox39.Size = New System.Drawing.Size(34, 34)
-        Me.PictureBox39.TabIndex = 254
-        Me.PictureBox39.TabStop = False
-        Me.PictureBox39.Tag = "spikes"
-        '
         'PictureBox7
         '
         Me.PictureBox7.BackgroundImage = CType(resources.GetObject("PictureBox7.BackgroundImage"), System.Drawing.Image)
@@ -369,7 +359,7 @@ Partial Class Tuto111
         Me.PictureBox41.Size = New System.Drawing.Size(25, 25)
         Me.PictureBox41.TabIndex = 261
         Me.PictureBox41.TabStop = False
-        Me.PictureBox41.Tag = "spikes"
+        Me.PictureBox41.Tag = "www"
         '
         'PictureBox42
         '
@@ -641,6 +631,70 @@ Partial Class Tuto111
         Me.PictureBox8.TabStop = False
         Me.PictureBox8.Tag = "spikes"
         '
+        'timeCount
+        '
+        Me.timeCount.AutoSize = True
+        Me.timeCount.BackColor = System.Drawing.Color.Transparent
+        Me.timeCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.timeCount.Location = New System.Drawing.Point(1064, 78)
+        Me.timeCount.Name = "timeCount"
+        Me.timeCount.Size = New System.Drawing.Size(119, 37)
+        Me.timeCount.TabIndex = 303
+        Me.timeCount.Text = "Label2"
+        Me.timeCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'pausebtn
+        '
+        Me.pausebtn.BackColor = System.Drawing.Color.Transparent
+        Me.pausebtn.BackgroundImage = Global.MarioBros.My.Resources.Resources.saveicon
+        Me.pausebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pausebtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pausebtn.Location = New System.Drawing.Point(89, 78)
+        Me.pausebtn.Name = "pausebtn"
+        Me.pausebtn.Size = New System.Drawing.Size(51, 49)
+        Me.pausebtn.TabIndex = 302
+        Me.pausebtn.TabStop = False
+        Me.pausebtn.Tag = ""
+        '
+        'deathCount
+        '
+        Me.deathCount.AutoSize = True
+        Me.deathCount.BackColor = System.Drawing.Color.Transparent
+        Me.deathCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.deathCount.Location = New System.Drawing.Point(1064, 127)
+        Me.deathCount.Name = "deathCount"
+        Me.deathCount.Size = New System.Drawing.Size(119, 37)
+        Me.deathCount.TabIndex = 301
+        Me.deathCount.Text = "Label2"
+        Me.deathCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'timeTimer
+        '
+        Me.timeTimer.Enabled = True
+        '
+        'PictureBox39
+        '
+        Me.PictureBox39.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox39.BackgroundImage = Global.MarioBros.My.Resources.Resources.multispike
+        Me.PictureBox39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox39.Location = New System.Drawing.Point(523, 389)
+        Me.PictureBox39.Name = "PictureBox39"
+        Me.PictureBox39.Size = New System.Drawing.Size(27, 25)
+        Me.PictureBox39.TabIndex = 254
+        Me.PictureBox39.TabStop = False
+        Me.PictureBox39.Tag = "spikes"
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox9.Location = New System.Drawing.Point(409, 282)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(15, 19)
+        Me.PictureBox9.TabIndex = 304
+        Me.PictureBox9.TabStop = False
+        Me.PictureBox9.Tag = "spikes"
+        '
         'BasicEnemy14
         '
         Me.BasicEnemy14.BackColor = System.Drawing.Color.Transparent
@@ -648,7 +702,7 @@ Partial Class Tuto111
         Me.BasicEnemy14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BasicEnemy14.Location = New System.Drawing.Point(1159, 318)
         Me.BasicEnemy14.MaxA = 300
-        Me.BasicEnemy14.MaxB = 480
+        Me.BasicEnemy14.MaxB = 500
         Me.BasicEnemy14.MovingDirection = "vertical"
         Me.BasicEnemy14.Name = "BasicEnemy14"
         Me.BasicEnemy14.ReachedLimit = False
@@ -709,53 +763,14 @@ Partial Class Tuto111
         Me.BasicEnemy11.Tag = "walls"
         Me.BasicEnemy11.TouchedPoint = Nothing
         '
-        'timeCount
-        '
-        Me.timeCount.AutoSize = True
-        Me.timeCount.BackColor = System.Drawing.Color.Transparent
-        Me.timeCount.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.timeCount.Location = New System.Drawing.Point(1064, 78)
-        Me.timeCount.Name = "timeCount"
-        Me.timeCount.Size = New System.Drawing.Size(133, 43)
-        Me.timeCount.TabIndex = 303
-        Me.timeCount.Text = "Label2"
-        Me.timeCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'pausebtn
-        '
-        Me.pausebtn.BackColor = System.Drawing.Color.Transparent
-        Me.pausebtn.BackgroundImage = Global.MarioBros.My.Resources.Resources.saveicon
-        Me.pausebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pausebtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pausebtn.Location = New System.Drawing.Point(89, 78)
-        Me.pausebtn.Name = "pausebtn"
-        Me.pausebtn.Size = New System.Drawing.Size(51, 49)
-        Me.pausebtn.TabIndex = 302
-        Me.pausebtn.TabStop = False
-        Me.pausebtn.Tag = ""
-        '
-        'deathCount
-        '
-        Me.deathCount.AutoSize = True
-        Me.deathCount.BackColor = System.Drawing.Color.Transparent
-        Me.deathCount.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.deathCount.Location = New System.Drawing.Point(1064, 127)
-        Me.deathCount.Name = "deathCount"
-        Me.deathCount.Size = New System.Drawing.Size(133, 43)
-        Me.deathCount.TabIndex = 301
-        Me.deathCount.Text = "Label2"
-        Me.deathCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'timeTimer
-        '
-        Me.timeTimer.Enabled = True
-        '
         'Tuto111
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.MarioBros.My.Resources.Resources.Blue
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.PictureBox41)
+        Me.Controls.Add(Me.PictureBox9)
         Me.Controls.Add(Me.timeCount)
         Me.Controls.Add(Me.pausebtn)
         Me.Controls.Add(Me.deathCount)
@@ -772,7 +787,6 @@ Partial Class Tuto111
         Me.Controls.Add(Me.BasicEnemy12)
         Me.Controls.Add(Me.PictureBox43)
         Me.Controls.Add(Me.PictureBox42)
-        Me.Controls.Add(Me.PictureBox41)
         Me.Controls.Add(Me.BasicEnemy11)
         Me.Controls.Add(Me.PictureBox38)
         Me.Controls.Add(Me.PictureBox7)
@@ -810,7 +824,7 @@ Partial Class Tuto111
         Me.MinimizeBox = False
         Me.Name = "Tuto111"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Tuto111"
+        Me.Text = "Give Up"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.col4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -824,7 +838,6 @@ Partial Class Tuto111
         CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).EndInit()
@@ -853,11 +866,13 @@ Partial Class Tuto111
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pausebtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BasicEnemy14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BasicEnemy13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BasicEnemy12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BasicEnemy11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pausebtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -882,7 +897,6 @@ Partial Class Tuto111
     Friend WithEvents PictureBox36 As PictureBox
     Friend WithEvents PictureBox32 As PictureBox
     Friend WithEvents PictureBox53 As PictureBox
-    Friend WithEvents PictureBox39 As PictureBox
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents PictureBox40 As PictureBox
     Friend WithEvents PictureBox38 As PictureBox
@@ -919,4 +933,6 @@ Partial Class Tuto111
     Friend WithEvents pausebtn As PictureBox
     Friend WithEvents deathCount As Label
     Friend WithEvents timeTimer As Timer
+    Friend WithEvents PictureBox39 As PictureBox
+    Friend WithEvents PictureBox9 As PictureBox
 End Class

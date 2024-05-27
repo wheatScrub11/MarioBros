@@ -35,6 +35,7 @@ Partial Class LevelSelector
         Me.closebtn = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.pressenter = New System.Windows.Forms.Label()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,11 +48,11 @@ Partial Class LevelSelector
         '
         Me.lvlname.AutoSize = True
         Me.lvlname.BackColor = System.Drawing.Color.Transparent
-        Me.lvlname.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvlname.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvlname.ForeColor = System.Drawing.Color.White
         Me.lvlname.Location = New System.Drawing.Point(621, 85)
         Me.lvlname.Name = "lvlname"
-        Me.lvlname.Size = New System.Drawing.Size(171, 43)
+        Me.lvlname.Size = New System.Drawing.Size(162, 37)
         Me.lvlname.TabIndex = 2
         Me.lvlname.Text = "Lvlnamee"
         '
@@ -59,11 +60,11 @@ Partial Class LevelSelector
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(418, 424)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(171, 43)
+        Me.Label1.Size = New System.Drawing.Size(148, 37)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Muertes:"
         '
@@ -71,11 +72,11 @@ Partial Class LevelSelector
         '
         Me.deathcount.AutoSize = True
         Me.deathcount.BackColor = System.Drawing.Color.Transparent
-        Me.deathcount.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.deathcount.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.deathcount.ForeColor = System.Drawing.Color.GreenYellow
         Me.deathcount.Location = New System.Drawing.Point(583, 424)
         Me.deathcount.Name = "deathcount"
-        Me.deathcount.Size = New System.Drawing.Size(38, 43)
+        Me.deathcount.Size = New System.Drawing.Size(36, 37)
         Me.deathcount.TabIndex = 4
         Me.deathcount.Text = "0"
         '
@@ -83,11 +84,11 @@ Partial Class LevelSelector
         '
         Me.besttime.AutoSize = True
         Me.besttime.BackColor = System.Drawing.Color.Transparent
-        Me.besttime.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.besttime.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.besttime.ForeColor = System.Drawing.Color.GreenYellow
         Me.besttime.Location = New System.Drawing.Point(681, 467)
         Me.besttime.Name = "besttime"
-        Me.besttime.Size = New System.Drawing.Size(133, 43)
+        Me.besttime.Size = New System.Drawing.Size(120, 37)
         Me.besttime.TabIndex = 6
         Me.besttime.Text = "24.23s"
         '
@@ -95,24 +96,24 @@ Partial Class LevelSelector
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(418, 467)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(266, 43)
+        Me.Label3.Size = New System.Drawing.Size(223, 37)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Mejor tiempo:"
         '
         'behaviour
         '
         Me.behaviour.AutoSize = True
-        Me.behaviour.BackColor = System.Drawing.Color.ForestGreen
+        Me.behaviour.BackColor = System.Drawing.Color.Yellow
         Me.behaviour.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.behaviour.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.behaviour.ForeColor = System.Drawing.Color.Yellow
-        Me.behaviour.Location = New System.Drawing.Point(479, 533)
+        Me.behaviour.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.behaviour.ForeColor = System.Drawing.Color.Black
+        Me.behaviour.Location = New System.Drawing.Point(476, 533)
         Me.behaviour.Name = "behaviour"
-        Me.behaviour.Size = New System.Drawing.Size(171, 43)
+        Me.behaviour.Size = New System.Drawing.Size(162, 37)
         Me.behaviour.TabIndex = 10
         Me.behaviour.Text = "Lvlnamee"
         '
@@ -131,6 +132,7 @@ Partial Class LevelSelector
         '
         Me.PictureBox1.BackgroundImage = Global.MarioBros.My.Resources.Resources.arrowselection
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Location = New System.Drawing.Point(865, 246)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(65, 59)
@@ -141,6 +143,7 @@ Partial Class LevelSelector
         '
         Me.PictureBox2.BackgroundImage = Global.MarioBros.My.Resources.Resources.arrowselectionleft
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.Location = New System.Drawing.Point(317, 246)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(69, 59)
@@ -184,13 +187,27 @@ Partial Class LevelSelector
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(501, 85)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(114, 43)
+        Me.Label2.Size = New System.Drawing.Size(92, 37)
         Me.Label2.TabIndex = 13
         Me.Label2.Text = "Nivel"
+        '
+        'pressenter
+        '
+        Me.pressenter.AutoSize = True
+        Me.pressenter.BackColor = System.Drawing.Color.Transparent
+        Me.pressenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.pressenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pressenter.ForeColor = System.Drawing.Color.Linen
+        Me.pressenter.Location = New System.Drawing.Point(466, 581)
+        Me.pressenter.Name = "pressenter"
+        Me.pressenter.Size = New System.Drawing.Size(302, 37)
+        Me.pressenter.TabIndex = 14
+        Me.pressenter.Text = "> Presiona Enter <"
+        Me.pressenter.Visible = False
         '
         'LevelSelector
         '
@@ -198,6 +215,7 @@ Partial Class LevelSelector
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.pressenter)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox3)
@@ -239,4 +257,5 @@ Partial Class LevelSelector
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents pressenter As Label
 End Class

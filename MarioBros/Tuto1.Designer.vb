@@ -842,10 +842,10 @@ Partial Class Tuto1
         '
         Me.deathCount.AutoSize = True
         Me.deathCount.BackColor = System.Drawing.Color.Transparent
-        Me.deathCount.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.deathCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.deathCount.Location = New System.Drawing.Point(1122, 105)
         Me.deathCount.Name = "deathCount"
-        Me.deathCount.Size = New System.Drawing.Size(57, 43)
+        Me.deathCount.Size = New System.Drawing.Size(53, 37)
         Me.deathCount.TabIndex = 151
         Me.deathCount.Text = "10"
         Me.deathCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -867,10 +867,10 @@ Partial Class Tuto1
         '
         Me.timeCount.AutoSize = True
         Me.timeCount.BackColor = System.Drawing.Color.Transparent
-        Me.timeCount.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.timeCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.timeCount.Location = New System.Drawing.Point(1074, 56)
         Me.timeCount.Name = "timeCount"
-        Me.timeCount.Size = New System.Drawing.Size(95, 43)
+        Me.timeCount.Size = New System.Drawing.Size(89, 37)
         Me.timeCount.TabIndex = 154
         Me.timeCount.Text = "100s"
         Me.timeCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -947,9 +947,11 @@ Partial Class Tuto1
         Me.Controls.Add(Me.PictureBox41)
         Me.Controls.Add(Me.deathCount)
         Me.DoubleBuffered = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Tuto1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Tuto1"
+        Me.Text = "Give Up"
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.star3, System.ComponentModel.ISupportInitialize).EndInit()

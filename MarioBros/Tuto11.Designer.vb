@@ -112,6 +112,7 @@ Partial Class Tuto11
         Me.pausebtn = New System.Windows.Forms.PictureBox()
         Me.deathCount = New System.Windows.Forms.Label()
         Me.timeTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox70 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.star3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.star2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -191,6 +192,7 @@ Partial Class Tuto11
         CType(Me.PictureBox64, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox69, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pausebtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox70, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox42
@@ -211,7 +213,7 @@ Partial Class Tuto11
         Me.star3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.star3.Image = CType(resources.GetObject("star3.Image"), System.Drawing.Image)
         Me.star3.InitialImage = CType(resources.GetObject("star3.InitialImage"), System.Drawing.Image)
-        Me.star3.Location = New System.Drawing.Point(924, 551)
+        Me.star3.Location = New System.Drawing.Point(927, 551)
         Me.star3.Name = "star3"
         Me.star3.Size = New System.Drawing.Size(30, 28)
         Me.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -254,7 +256,7 @@ Partial Class Tuto11
         '
         Me.pb1.BackColor = System.Drawing.Color.DarkRed
         Me.pb1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pb1.Location = New System.Drawing.Point(116, 427)
+        Me.pb1.Location = New System.Drawing.Point(95, 466)
         Me.pb1.Name = "pb1"
         Me.pb1.Size = New System.Drawing.Size(51, 87)
         Me.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -595,7 +597,7 @@ Partial Class Tuto11
         '
         Me.col4.BackColor = System.Drawing.Color.SandyBrown
         Me.col4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.col4.Location = New System.Drawing.Point(117, 422)
+        Me.col4.Location = New System.Drawing.Point(96, 461)
         Me.col4.Name = "col4"
         Me.col4.Size = New System.Drawing.Size(48, 5)
         Me.col4.TabIndex = 153
@@ -607,7 +609,7 @@ Partial Class Tuto11
         '
         Me.col3.BackColor = System.Drawing.Color.SandyBrown
         Me.col3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.col3.Location = New System.Drawing.Point(117, 514)
+        Me.col3.Location = New System.Drawing.Point(96, 553)
         Me.col3.Name = "col3"
         Me.col3.Size = New System.Drawing.Size(48, 8)
         Me.col3.TabIndex = 152
@@ -619,7 +621,7 @@ Partial Class Tuto11
         '
         Me.col2.BackColor = System.Drawing.Color.SandyBrown
         Me.col2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.col2.Location = New System.Drawing.Point(111, 428)
+        Me.col2.Location = New System.Drawing.Point(90, 467)
         Me.col2.Name = "col2"
         Me.col2.Size = New System.Drawing.Size(5, 85)
         Me.col2.TabIndex = 151
@@ -631,7 +633,7 @@ Partial Class Tuto11
         '
         Me.col.BackColor = System.Drawing.Color.SandyBrown
         Me.col.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.col.Location = New System.Drawing.Point(166, 428)
+        Me.col.Location = New System.Drawing.Point(145, 467)
         Me.col.Name = "col"
         Me.col.Size = New System.Drawing.Size(5, 85)
         Me.col.TabIndex = 150
@@ -744,9 +746,9 @@ Partial Class Tuto11
         '
         Me.PictureBox41.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox41.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox41.Location = New System.Drawing.Point(345, 554)
+        Me.PictureBox41.Location = New System.Drawing.Point(338, 554)
         Me.PictureBox41.Name = "PictureBox41"
-        Me.PictureBox41.Size = New System.Drawing.Size(10, 29)
+        Me.PictureBox41.Size = New System.Drawing.Size(15, 29)
         Me.PictureBox41.TabIndex = 211
         Me.PictureBox41.TabStop = False
         Me.PictureBox41.Tag = "spikes"
@@ -794,14 +796,14 @@ Partial Class Tuto11
         Me.PictureBox44.Size = New System.Drawing.Size(34, 34)
         Me.PictureBox44.TabIndex = 214
         Me.PictureBox44.TabStop = False
-        Me.PictureBox44.Tag = "spikes"
+        Me.PictureBox44.Tag = "spikess"
         '
         'PictureBox45
         '
         Me.PictureBox45.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox45.BackgroundImage = Global.MarioBros.My.Resources.Resources.multispike
         Me.PictureBox45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox45.Location = New System.Drawing.Point(248, 300)
+        Me.PictureBox45.Location = New System.Drawing.Point(244, 296)
         Me.PictureBox45.Name = "PictureBox45"
         Me.PictureBox45.Size = New System.Drawing.Size(34, 34)
         Me.PictureBox45.TabIndex = 216
@@ -846,7 +848,7 @@ Partial Class Tuto11
         Me.PictureBox52.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox52.BackgroundImage = Global.MarioBros.My.Resources.Resources.multispike
         Me.PictureBox52.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox52.Location = New System.Drawing.Point(601, 236)
+        Me.PictureBox52.Location = New System.Drawing.Point(608, 236)
         Me.PictureBox52.Name = "PictureBox52"
         Me.PictureBox52.Size = New System.Drawing.Size(34, 34)
         Me.PictureBox52.TabIndex = 219
@@ -915,7 +917,7 @@ Partial Class Tuto11
         Me.PictureBox58.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox58.BackgroundImage = Global.MarioBros.My.Resources.Resources.multispike
         Me.PictureBox58.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox58.Location = New System.Drawing.Point(528, 236)
+        Me.PictureBox58.Location = New System.Drawing.Point(541, 236)
         Me.PictureBox58.Name = "PictureBox58"
         Me.PictureBox58.Size = New System.Drawing.Size(34, 34)
         Me.PictureBox58.TabIndex = 225
@@ -949,7 +951,7 @@ Partial Class Tuto11
         Me.PictureBox61.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox61.BackgroundImage = Global.MarioBros.My.Resources.Resources.multispike
         Me.PictureBox61.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox61.Location = New System.Drawing.Point(669, 236)
+        Me.PictureBox61.Location = New System.Drawing.Point(671, 236)
         Me.PictureBox61.Name = "PictureBox61"
         Me.PictureBox61.Size = New System.Drawing.Size(34, 34)
         Me.PictureBox61.TabIndex = 229
@@ -1108,10 +1110,10 @@ Partial Class Tuto11
         '
         Me.timeCount.AutoSize = True
         Me.timeCount.BackColor = System.Drawing.Color.Transparent
-        Me.timeCount.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.timeCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.timeCount.Location = New System.Drawing.Point(1069, 62)
         Me.timeCount.Name = "timeCount"
-        Me.timeCount.Size = New System.Drawing.Size(133, 43)
+        Me.timeCount.Size = New System.Drawing.Size(119, 37)
         Me.timeCount.TabIndex = 248
         Me.timeCount.Text = "Label2"
         Me.timeCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1133,10 +1135,10 @@ Partial Class Tuto11
         '
         Me.deathCount.AutoSize = True
         Me.deathCount.BackColor = System.Drawing.Color.Transparent
-        Me.deathCount.Font = New System.Drawing.Font("Roboto Mono", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.deathCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.deathCount.Location = New System.Drawing.Point(1069, 111)
         Me.deathCount.Name = "deathCount"
-        Me.deathCount.Size = New System.Drawing.Size(133, 43)
+        Me.deathCount.Size = New System.Drawing.Size(119, 37)
         Me.deathCount.TabIndex = 246
         Me.deathCount.Text = "Label2"
         Me.deathCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1144,6 +1146,17 @@ Partial Class Tuto11
         'timeTimer
         '
         Me.timeTimer.Enabled = True
+        '
+        'PictureBox70
+        '
+        Me.PictureBox70.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox70.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox70.Location = New System.Drawing.Point(372, 404)
+        Me.PictureBox70.Name = "PictureBox70"
+        Me.PictureBox70.Size = New System.Drawing.Size(19, 23)
+        Me.PictureBox70.TabIndex = 249
+        Me.PictureBox70.TabStop = False
+        Me.PictureBox70.Tag = "spikes"
         '
         'Tuto11
         '
@@ -1182,8 +1195,6 @@ Partial Class Tuto11
         Me.Controls.Add(Me.PictureBox47)
         Me.Controls.Add(Me.PictureBox44)
         Me.Controls.Add(Me.PictureBox43)
-        Me.Controls.Add(Me.PictureBox34)
-        Me.Controls.Add(Me.PictureBox41)
         Me.Controls.Add(Me.PictureBox39)
         Me.Controls.Add(Me.PictureBox38)
         Me.Controls.Add(Me.PictureBox37)
@@ -1232,9 +1243,15 @@ Partial Class Tuto11
         Me.Controls.Add(Me.col)
         Me.Controls.Add(Me.PictureBox35)
         Me.Controls.Add(Me.PictureBox69)
+        Me.Controls.Add(Me.PictureBox70)
+        Me.Controls.Add(Me.PictureBox34)
+        Me.Controls.Add(Me.PictureBox41)
         Me.DoubleBuffered = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Tuto11"
-        Me.Text = "Tuto11"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Give Up"
         CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.star3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.star2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1314,6 +1331,7 @@ Partial Class Tuto11
         CType(Me.PictureBox64, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox69, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pausebtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox70, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1406,4 +1424,5 @@ Partial Class Tuto11
     Friend WithEvents pausebtn As PictureBox
     Friend WithEvents deathCount As Label
     Friend WithEvents timeTimer As Timer
+    Friend WithEvents PictureBox70 As PictureBox
 End Class

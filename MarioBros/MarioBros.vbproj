@@ -180,6 +180,12 @@
     <Compile Include="Tuto2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Tuto22.Designer.vb">
+      <DependentUpon>Tuto22.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tuto22.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tuto2.resx">
       <DependentUpon>Tuto2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tuto22.resx">
+      <DependentUpon>Tuto22.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -378,6 +387,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\opacitybg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saltotuto.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
