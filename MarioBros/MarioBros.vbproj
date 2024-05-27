@@ -379,5 +379,11 @@
   <ItemGroup>
     <None Include="Resources\opacitybg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_juego.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_juego_arr.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

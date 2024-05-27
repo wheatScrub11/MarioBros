@@ -13,12 +13,12 @@ Public Class Form1
         If ProgressBar1.Value >= 100 Then
             personaje_inicio.Visible = True
             ProgressBar1.Visible = False
-            personaje_inicio.Location = New Point(personaje_inicio.Location.X + 10 
-                     , personaje_inicio.Location.Y)
-            If personaje_inicio.Location.X >= 390 Then
+            personaje_inicio.Location = New Point(personaje_inicio.Location.X + 10, personaje_inicio.Location.Y)
+            If personaje_inicio.Location.X > 750 And personaje_inicio.Location.Y = personaje_inicio.Location.Y Then
+                Timer_inicio.Stop()
                 Me.Hide()
                 OptionsMenu.Show()
-                Timer_inicio.Stop()
+
             End If
         Else
             ProgressBar1.Value = ProgressBar1.Value + 2.5
