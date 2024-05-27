@@ -115,6 +115,12 @@
     <Compile Include="Form5.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LevelSelector.Designer.vb">
+      <DependentUpon>LevelSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LevelSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -132,10 +138,46 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="OptionsM.Designer.vb">
+      <DependentUpon>OptionsM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OptionsMenu.Designer.vb">
       <DependentUpon>OptionsMenu.vb</DependentUpon>
     </Compile>
     <Compile Include="OptionsMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveData.Designer.vb">
+      <DependentUpon>SaveData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SaveData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tuto1.Designer.vb">
+      <DependentUpon>Tuto1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tuto1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tuto11.Designer.vb">
+      <DependentUpon>Tuto11.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tuto11.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tuto111.Designer.vb">
+      <DependentUpon>Tuto111.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tuto111.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tuto2.Designer.vb">
+      <DependentUpon>Tuto2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tuto2.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -155,14 +197,35 @@
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LevelSelector.resx">
+      <DependentUpon>LevelSelector.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="OptionsM.resx">
+      <DependentUpon>OptionsM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OptionsMenu.resx">
       <DependentUpon>OptionsMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveData.resx">
+      <DependentUpon>SaveData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tuto1.resx">
+      <DependentUpon>Tuto1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tuto11.resx">
+      <DependentUpon>Tuto11.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tuto111.resx">
+      <DependentUpon>Tuto111.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tuto2.resx">
+      <DependentUpon>Tuto2.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +291,93 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\adam-wade-new-piskel-ezgif.com-crop.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\todownspike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toleftspike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multispike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terr1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ceiling1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terr11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saltaeneleaire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowselection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closebtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowselectionleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\111preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opacitybg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

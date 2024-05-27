@@ -173,6 +173,7 @@
             Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col3)
 
             If res IsNot Nothing AndAlso res.Item2.Tag = "spikes" Then
+                System.Console.WriteLine("ta tocando")
                 movePlayerToSpawnPoint()
             ElseIf res IsNot Nothing AndAlso (res.Item2.Tag = "walls" Or res.Item2.Tag = "walls2") Then
                 incrementalFallingValue = res.Item2.Location.Y - (pb1.Location.Y + pb1.Height)
@@ -180,15 +181,15 @@
             End If
 
             If isTouchingStickyWall Then
-                incrementalFallingValue = 0.9
+                incrementalFallingValue = 0.7
             End If
 
-
-            pb1.Location = New Point(pb1.Location.X, pb1.Location.Y + incrementalFallingValue)
-            col.Location = New Point(col.Location.X, pb1.Location.Y)
-            col2.Location = New Point(col2.Location.X, pb1.Location.Y)
-            col3.Location = New Point(col3.Location.X, pb1.Location.Y + pb1.Height)
-            col4.Location = New Point(col4.Location.X, pb1.Location.Y - 5)
+            createCharacterAndItsHitboxes(New Size(pb1.Width, pb1.Height), New Point(pb1.Location.X, pb1.Location.Y + incrementalFallingValue))
+            'pb1.Location = New Point(pb1.Location.X, pb1.Location.Y + incrementalFallingValue)
+            'col.Location = New Point(col.Location.X, pb1.Location.Y)
+            'col2.Location = New Point(col2.Location.X, pb1.Location.Y)
+            'col3.Location = New Point(col3.Location.X, pb1.Location.Y + pb1.Height)
+            'col4.Location = New Point(col4.Location.X, pb1.Location.Y - 5)
 
 
             If isTouchingGround Then
@@ -200,6 +201,7 @@
     End Function
 
     Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         createCharacterAndItsHitboxes(New Size(30, 40), New Point(spawnX, spanwY))
         'setBasicEnemy1Properties(enemy1, 1, New Size(50, 50), New Point(200, 300), 100, 300, "horizontal", "walls", My.Resources.Undertale)
 
@@ -378,6 +380,7 @@
             ElseIf leftCollision.Tag = "walls" Or leftCollision.Tag = "walls2" Then
                 moveLeft = True
                 If leftCollision.Tag = "walls2" Then
+
                     isTouchingStickyWall = True
                 End If
             End If
@@ -420,7 +423,6 @@
             rightCollision = res.Item2
         Else
             isTouchingStickyWall = False
-
             isTouchingRight = False
             rightCollision = Nothing
         End If
@@ -455,26 +457,36 @@
     End Function
 
     Public Function checkCeilingCollision() As Boolean
+        System.Console.WriteLine(isTouchingStickyCeiling)
         'Label1.Text = col4.Location.Y
         Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(col4)
 
         If res IsNot Nothing AndAlso res.Item1 = True Then
             isTouchingCeiling = True
             ceilingCollision = res.Item2
-            If res.Item2.Tag = "walls" Or res.Item2.Tag = "walls2" Then
-                velocityY = ceilingCollision.Location.Y
+            System.Console.WriteLine(ceilingCollision.Tag)
 
+            If ceilingCollision.Tag = "walls2" Then
+                isTouchingStickyCeiling = True
+            End If
+            If timer_gravity.Enabled = False AndAlso isTouchingStickyCeiling = True AndAlso ceilingCollision.Tag = "spikes" Then
+                timer_gravity.Start()
+                isTouchingStickyCeiling = False
             End If
 
-        Else
+
+
+        ElseIf res Is Nothing Then
             '' if i move to the left or right when im sticked to a ceiling and then i stopped touching the ceiling, i will drop
             If timer_gravity.Enabled = False AndAlso isTouchingStickyCeiling = True Then
                 timer_gravity.Start()
                 isTouchingStickyCeiling = False
             End If
             isTouchingCeiling = False
+            isTouchingStickyCeiling = False
             ceilingCollision = Nothing
         End If
+
         Return False
     End Function
 
@@ -485,18 +497,74 @@
 
     Private Sub col_LocationChanged(sender As Object, e As EventArgs) Handles col.LocationChanged
         checkRightCollision()
+        If isTouchingRight Then
+            If rightCollision.Tag = "stars" Then
+                starCount += 1
+                rightCollision.Location = New Point(rightCollision.Location.X + 5000, rightCollision.Location.Y + 5000)
+                If starCount >= 3 Then
+                    door.BackgroundImage = My.Resources.doorOpened
+                    door.Location = New Point(1082, 467)
+                End If
+            ElseIf rightCollision.Tag = "spikes" Then
+                movePlayerToSpawnPoint()
+            ElseIf rightCollision.Name = "door" Then
+                Me.Hide()
+            End If
+        End If
     End Sub
 
     Private Sub col2_LocationChanged(sender As Object, e As EventArgs) Handles col2.LocationChanged
         checkLeftCollision()
+        If isTouchingLeft Then
+            If leftCollision.Tag = "stars" Then
+                starCount += 1
+                leftCollision.Location = New Point(leftCollision.Location.X + 5000, leftCollision.Location.Y + 5000)
+                If starCount >= 3 Then
+                    door.BackgroundImage = My.Resources.doorOpened
+                    door.Location = New Point(1082, 467)
+                End If
+            ElseIf leftCollision.Tag = "spikes" Then
+                movePlayerToSpawnPoint()
+            ElseIf leftCollision.Name = "door" Then
+                Me.Hide()
+            End If
+        End If
     End Sub
 
     Private Sub col3_LocationChanged(sender As Object, e As EventArgs) Handles col3.LocationChanged
         checkGroundCollision()
+        If isTouchingGround Then
+            If groundCollision.Tag = "stars" Then
+                starCount += 1
+                groundCollision.Location = New Point(groundCollision.Location.X + 5000, groundCollision.Location.Y + 5000)
+                If starCount >= 3 Then
+                    door.BackgroundImage = My.Resources.doorOpened
+                    door.Location = New Point(1082, 467)
+                End If
+            ElseIf groundCollision.Tag = "spikes" Then
+                movePlayerToSpawnPoint()
+            ElseIf groundCollision.Name = "door" Then
+                Me.Hide()
+            End If
+        End If
     End Sub
 
     Private Sub col4_LocationChanged(sender As Object, e As EventArgs) Handles col4.LocationChanged
         checkCeilingCollision()
+        If isTouchingCeiling Then
+            If ceilingCollision.Tag = "stars" Then
+                starCount += 1
+                ceilingCollision.Location = New Point(ceilingCollision.Location.X + 5000, ceilingCollision.Location.Y + 5000)
+                If starCount >= 3 Then
+                    door.BackgroundImage = My.Resources.doorOpened
+                    door.Location = New Point(1082, 467)
+                End If
+            ElseIf ceilingCollision.Tag = "spikes" Then
+                movePlayerToSpawnPoint()
+            ElseIf ceilingCollision.Name = "door" Then
+                Me.Hide()
+            End If
+        End If
     End Sub
 
 
@@ -530,9 +598,24 @@
                         End If
 
                         If enemy.ReachedLimit = False AndAlso enemy.MovingDirection = "vertical" Then
-                            movePlayerToPoint(pb1.Location.X, pb1.Location.Y - 1)
+                            createCharacterAndItsHitboxes(New Size(pb1.Width, pb1.Height), New Point(pb1.Location.X, pb1.Location.Y - 1))
                         ElseIf enemy.ReachedLimit = True AndAlso enemy.MovingDirection = "vertical" Then
-                            movePlayerToPoint(pb1.Location.X, pb1.Location.Y + 1)
+                            createCharacterAndItsHitboxes(New Size(pb1.Width, pb1.Height), New Point(pb1.Location.X, pb1.Location.Y + 1))
+                        End If
+                    End If
+                End If
+                If enemy.Tag = "walls2" Then
+                    If col4.Bounds.IntersectsWith(enemy.Bounds) Or col3.Bounds.IntersectsWith(enemy.Bounds) Then
+                        If enemy.ReachedLimit = False AndAlso enemy.MovingDirection = "horizontal" Then
+                            createCharacterAndItsHitboxes(New Size(pb1.Width, pb1.Height), New Point(pb1.Location.X - 1, pb1.Location.Y))
+                        ElseIf enemy.ReachedLimit = True AndAlso enemy.MovingDirection = "horizontal" Then
+                            createCharacterAndItsHitboxes(New Size(pb1.Width, pb1.Height), New Point(pb1.Location.X + 1, pb1.Location.Y))
+                        End If
+
+                        If enemy.ReachedLimit = False AndAlso enemy.MovingDirection = "vertical" Then
+                            createCharacterAndItsHitboxes(New Size(pb1.Width, pb1.Height), New Point(pb1.Location.X, pb1.Location.Y - 1))
+                        ElseIf enemy.ReachedLimit = True AndAlso enemy.MovingDirection = "vertical" Then
+                            createCharacterAndItsHitboxes(New Size(pb1.Width, pb1.Height), New Point(pb1.Location.X, pb1.Location.Y + 1))
                         End If
                     End If
                 End If
@@ -651,6 +734,9 @@
         col3.Location = New Point(pb1.Location.X + 1, pb1.Location.Y + pb1.Height)
         col4.Location = New Point(pb1.Location.X + 1, pb1.Location.Y - 5)
 
+        isTouchingStickyCeiling = False
+        isTouchingStickyWall = False
+
         Return False
     End Function
 
@@ -692,43 +778,4 @@
 
     End Function
 
-    Private Sub pb1_LocationChanged(sender As Object, e As EventArgs) Handles pb1.LocationChanged
-        Dim res As Tuple(Of Boolean, PictureBox) = checkCollision(pb1)
-
-        If res IsNot Nothing AndAlso res.Item2.Tag = "stars" Then
-            res.Item2.Location = New Point(res.Item2.Location.X + 5000, res.Item2.Location.Y + 5000)
-            starCount += 1
-            If starCount >= 3 Then
-
-                door.BackgroundImage = My.Resources.doorOpened
-                door.Location = New Point(1082, 467)
-
-            End If
-
-        ElseIf res IsNot Nothing AndAlso res.Item2.Name = "door" Then
-            'Form4.Show()
-            Me.Close()
-        End If
-
-    End Sub
-
-    Private Sub PictureBox51_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
-
-    End Sub
-
-    Private Sub PictureBox36_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub PictureBox37_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub PictureBox39_Click(sender As Object, e As EventArgs)
-
-    End Sub
 End Class

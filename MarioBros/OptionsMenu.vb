@@ -3,7 +3,7 @@
     Public screenWidth As Double = 1280
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+        Tuto1.Show()
 
 
     End Sub

@@ -1,4 +1,4 @@
-﻿Public Class Form3
+﻿Public Class Tuto1
     Dim velocityY As Double = 0
     Dim gravity As Double = 25.8
     Dim jumpSpeed As Double = -550
@@ -51,6 +51,10 @@
     Private bullet1 As New BasicBullet1
     Private bullet2 As New BasicBullet1
     Private bullet3 As New BasicBullet1
+
+
+    Dim deathc As Integer = 0
+    Dim timec As Double = 0
 
 
 
@@ -199,8 +203,8 @@
     End Function
 
     Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
+        SaveData.openedForm = Me
+        deathCount.Text = SaveData.deathCount
         createCharacterAndItsHitboxes(New Size(30, 40), New Point(spawnX, spanwY))
         'setBasicEnemy1Properties(enemy1, 1, New Size(50, 50), New Point(200, 300), 100, 300, "horizontal", "walls", My.Resources.Undertale)
 
@@ -236,7 +240,11 @@
                     isTouchingStickyCeiling = False
 
                 End If
-            Case Keys.Down
+            Case Keys.Escape
+                If OptionsM.isOpeningOptionsMenu = False Then
+                    Dim a As New OptionsM
+                    a.ShowDialog()
+                End If
 
 
 
@@ -421,8 +429,7 @@
             rightCollision = res.Item2
 
             If rightCollision.Name = "door" AndAlso collectedAllStar Then
-                Form4.Show()
-                Me.Hide()
+                moveToNextLvl()
             End If
         Else
             isTouchingStickyWall = False
@@ -461,8 +468,7 @@
             leftCollision = res.Item2
 
             If leftCollision.Name = "door" AndAlso collectedAllStar Then
-                Form4.Show()
-                Me.Hide()
+                moveToNextLvl()
             End If
         Else
             isTouchingStickyWall = False
@@ -500,8 +506,7 @@
             groundCollision = res.Item2
 
             If groundCollision.Name = "door" AndAlso collectedAllStar Then
-                Form4.Show()
-                Me.Hide()
+                moveToNextLvl()
             End If
         Else
             isTouchingGround = False
@@ -536,8 +541,7 @@
             isTouchingCeiling = True
             ceilingCollision = res.Item2
             If ceilingCollision.Name = "door" AndAlso collectedAllStar Then
-                Form4.Show()
-                Me.Hide()
+                moveToNextLvl()
             End If
 
 
@@ -615,6 +619,7 @@
 
 
     Private Sub basicenemy1timer_Tick(sender As Object, e As EventArgs) Handles basicenemy1timer.Tick
+
         For Each ctrl As Control In Me.Controls
             If TypeOf ctrl Is BasicEnemy1 Then
                 Dim enemy As BasicEnemy1 = DirectCast(ctrl, BasicEnemy1)
@@ -761,6 +766,9 @@
     End Function
 
     Public Function movePlayerToSpawnPoint() As Boolean
+        deathc += 1
+        SaveData.deathCount += 1
+        deathCount.Text = SaveData.deathCount
         If starCount < 4 AndAlso collectedAllStar = False Then
             starCount = 0
             System.Console.WriteLine(door.BackgroundImage Is My.Resources.doorClosed)
@@ -778,11 +786,12 @@
 
         End If
 
-        isJumping = True
         createCharacterAndItsHitboxes(New Size(pb1.Width, pb1.Height), New Point(spawnX, spanwY))
 
         ' reset
         velocityY = 0
+        isJumping = False
+        timer_gravity.Start()
         isTouchingCeiling = False
         ceilingCollision = Nothing
         isTouchingGround = False
@@ -839,5 +848,22 @@
         Return False
 
     End Function
+
+    Public Function moveToNextLvl() As Boolean
+        SaveData.levelsInfo(0) = New SaveData.Level("1.", 1, True, My.Resources._1preview, deathc, timec)
+        Tuto11.Show()
+        Me.Close()
+    End Function
+
+    Private Sub pausebtn_Click(sender As Object, e As EventArgs) Handles pausebtn.Click
+        If OptionsM.isOpeningOptionsMenu = False Then
+            OptionsM.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub timeTimer_Tick(sender As Object, e As EventArgs) Handles timeTimer.Tick
+        timec = Math.Round(timec + 0.1, 2)
+        timeCount.Text = timec & "s"
+    End Sub
 
 End Class
