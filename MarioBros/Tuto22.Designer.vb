@@ -914,7 +914,7 @@ Partial Class Tuto22
         'PictureBox45
         '
         Me.PictureBox45.BackColor = System.Drawing.Color.White
-        Me.PictureBox45.BackgroundImage = Global.MarioBros.My.Resources.Resources.saltotuto
+        Me.PictureBox45.BackgroundImage = Global.MarioBros.My.Resources.salto1
         Me.PictureBox45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox45.Location = New System.Drawing.Point(259, 62)
         Me.PictureBox45.Name = "PictureBox45"

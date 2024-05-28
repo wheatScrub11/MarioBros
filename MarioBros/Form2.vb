@@ -19,11 +19,19 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If personaje_principal.Location.X >= 360 Then
             personaje_principal.Visible = False
+            Label2.Visible = False
+            Label1.Visible = True
             celador.Visible = True
             cuadro_texto.Visible = True
+            Button1.Visible = True
         Else
             personaje_principal.Location = New Point(personaje_principal.Location.X + 5, personaje_principal.Location.Y)
 
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Hide()
+        Form6.Show()
     End Sub
 End Class

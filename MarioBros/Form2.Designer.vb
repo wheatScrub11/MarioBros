@@ -28,6 +28,8 @@ Partial Class FormularioBrayan
         Me.celador = New System.Windows.Forms.PictureBox()
         Me.cuadro_texto = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.personaje_principal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.celador, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cuadro_texto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,11 +76,41 @@ Partial Class FormularioBrayan
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(111, 132)
+        Me.Label1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Font = New System.Drawing.Font("Papyrus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(109, 142)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(417, 75)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Buenas tardes, joven. Hoy las clases son opcionales " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "debido a que se han present" &
+    "ado sucesos extraños. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Por favor, vaya con cuidado."
+        Me.Label1.UseMnemonic = False
+        Me.Label1.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.Font = New System.Drawing.Font("Papyrus", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Location = New System.Drawing.Point(203, 103)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(602, 50)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Un lunes por la mañana, un estudiante de ADSO llamado Juan del SENA " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Floridab" &
+    "lanca se dirige entusiasmado a formación para aprender."
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Papyrus", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Image = Global.MarioBros.My.Resources.Resources.Boton_Inicio_historia
+        Me.Button1.Location = New System.Drawing.Point(245, 393)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(152, 56)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Vale, muchas " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gracias."
+        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'FormularioBrayan
         '
@@ -86,6 +118,8 @@ Partial Class FormularioBrayan
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.MarioBros.My.Resources.Resources.Portería_2__1_
         Me.ClientSize = New System.Drawing.Size(1069, 681)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cuadro_texto)
         Me.Controls.Add(Me.celador)
@@ -107,4 +141,6 @@ Partial Class FormularioBrayan
     Friend WithEvents celador As PictureBox
     Friend WithEvents cuadro_texto As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
 End Class
